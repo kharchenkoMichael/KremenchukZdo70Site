@@ -1,0 +1,113 @@
+@import "src/app/styleguide/scroll";
+@import "src/app/styleguide/fonts";
+
+.background {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+
+  background: rgb(13, 236, 254);
+
+  .background-header {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 350px;
+
+    background-image: url("../../../assets/images/sky.jpg");
+    background-position: bottom;
+  }
+
+  .background-footer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 250px;
+
+    background-image: url("../../../assets/images/grass.jpg");
+  }
+}
+
+.full-container {
+  height: 100vh;
+  padding: 0;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+
+  header {
+    position: relative;
+    padding: 20px 24px;
+    justify-content: flex-start;
+    height: min-content;
+
+    font-family: "Suplexmentary_Comic_NC";
+    color: rgb(13, 3, 104);
+    text-shadow: rgb(248, 195, 3) 1px 0 10px;
+
+    .name {
+      display: flex;
+
+      .name-text {
+        margin: auto; /* Important */
+        font-size: 35px;
+        font-family: "Suplexmentary_Comic_NC";
+        text-shadow: rgb(248, 195, 3) 1px 0 10px;
+        color: rgb(13, 3, 104);
+
+        text-decoration: none;
+      }
+    }
+
+    .menu {
+      height: 105px;
+      vertical-align: middle;
+
+      .menu-item {
+        display: flex;
+        font-size: 20px;
+
+        a {
+          margin: auto;
+          font-family: "Suplexmentary_Comic_NC";
+          color: rgb(13, 3, 104);
+          text-shadow: rgb(248, 195, 3) 1px 0 10px;
+        }
+
+        :hover {
+          font-size: 30px;
+        }
+      }
+
+      .active {
+        font-size: 30px;
+      }
+    }
+  }
+
+  main {
+    flex-grow: 1;
+    overflow: scroll;
+    @include scroll();
+
+    .content {
+      border-radius: 20px;
+      background-color: rgba(255, 255, 255, 0.5);
+      min-height: 90%;
+    }
+  }
+
+  footer {
+    position: relative;
+    padding: 20px 24px;
+    height: min-content;
+
+    font-family: "Suplexmentary_Comic_NC";
+    color: white;
+  }
+}

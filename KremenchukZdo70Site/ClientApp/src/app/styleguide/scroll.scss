@@ -1,0 +1,18 @@
+@import "colors";
+
+@mixin scroll() {
+  &::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar-track {
+    display: none;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $dark-grey;
+    border-radius: 3px;
+  }
+}

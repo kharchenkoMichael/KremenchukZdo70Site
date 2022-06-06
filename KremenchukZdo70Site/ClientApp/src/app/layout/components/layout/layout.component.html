@@ -1,0 +1,65 @@
+<div class="background">
+  <div class="background-header"></div>
+  <div class="background-footer"></div>
+</div>
+<div class="container-fluid full-container">
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col-5 name">
+          <a [routerLink]="['/home']" class="name-text"
+            >Заклад дошкільної освіти №70</a
+          >
+        </div>
+        <div class="col-7 menu">
+          <div class="container-fluid">
+            <div class="row menu">
+              <div
+                class="col-4 menu-item"
+                [class.active]="state === layoutState.Home"
+              >
+                <a
+                  class="nav-link"
+                  [routerLink]="['/home']"
+                  (click)="ChangeState(layoutState.Home)"
+                >
+                  Головна
+                </a>
+              </div>
+              <div
+                class="col-4 menu-item"
+                [class.active]="state === layoutState.About"
+              >
+                <a
+                  class="nav-link"
+                  [routerLink]="['/about']"
+                  (click)="ChangeState(layoutState.About)"
+                  >Про нас</a
+                >
+              </div>
+              <div
+                class="col-4 menu-item"
+                [class.active]="state === layoutState.Contacts"
+              >
+                <a
+                  class="nav-link"
+                  [routerLink]="['/contacts']"
+                  (click)="ChangeState(layoutState.Contacts)"
+                  >Контакти</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container content">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+  <footer>
+    <div class="container">© Заклад дошкільної освіти №70. м. Кременчук</div>
+  </footer>
+</div>

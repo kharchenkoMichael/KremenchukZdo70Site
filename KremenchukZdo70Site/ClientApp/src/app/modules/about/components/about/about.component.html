@@ -1,0 +1,74 @@
+<div class="row">
+  <div class="col-4">
+    <ul class="nav flex-column menu">
+      <li
+        class="nav-item menu-item first-menu-item"
+        [class.active]="state === aboutState.Collective"
+      >
+        <a
+          class="nav-link"
+          [routerLink]="['/about/collective']"
+          (click)="ChangeState(aboutState.Collective)"
+          >Наш колектив</a
+        >
+      </li>
+      <li
+        class="nav-item menu-item"
+        [class.active]="state === aboutState.InformationOpenness"
+      >
+        <a
+          class="nav-link"
+          [routerLink]="['/about/information-openness']"
+          (click)="ChangeState(aboutState.InformationOpenness)"
+          >Інформаційна відкритість</a
+        >
+      </li>
+      <li
+        class="nav-item menu-item"
+        [class.active]="state === aboutState.RegulatoryFramework"
+      >
+        <a
+          class="nav-link"
+          [routerLink]="['/about/regulatory-framework']"
+          (click)="ChangeState(aboutState.RegulatoryFramework)"
+          >Нормативно-правова база</a
+        >
+      </li>
+      <li class="nav-item menu-item" [class.active]="state === aboutState.Food">
+        <a
+          class="nav-link"
+          [routerLink]="['/about/food']"
+          (click)="ChangeState(aboutState.Food)"
+          >Харчування</a
+        >
+      </li>
+      <li
+        class="nav-item menu-item"
+        [class.active]="state === aboutState.AntiBullying"
+      >
+        <a
+          class="nav-link"
+          [routerLink]="['/about/anti-bullying']"
+          (click)="ChangeState(aboutState.AntiBullying)"
+        >
+          Протидія булінгу та домашньому насильству
+        </a>
+      </li>
+      <li
+        class="nav-item menu-item last-menu-item"
+        [class.active]="state === aboutState.SpecialEducationalNeeds"
+      >
+        <a
+          class="nav-link"
+          [routerLink]="['/about/special-educational-needs']"
+          (click)="ChangeState(aboutState.SpecialEducationalNeeds)"
+        >
+          Особливі освітні потреби
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="col-8">
+    <router-outlet></router-outlet>
+  </div>
+</div>
