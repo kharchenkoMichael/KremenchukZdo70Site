@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AboutState } from 'src/app/Models/about-state';
+import { AboutState } from 'src/app/shared/models/about-state';
 
 @Component({
   selector: 'app-about',

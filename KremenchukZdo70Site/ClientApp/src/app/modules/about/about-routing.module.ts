@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AboutComponent } from '../about/components/about/about.component';
 import { AntiBullyingComponent } from './components/anti-bullying/anti-bullying.component';
-import { CollectiveComponent } from '../../shared/components/collective/collective.component';
+import { CollectiveComponent } from './components/collective/collective.component';
 import { FoodComponent } from './components/food/food.component';
 import { InformationOpennessComponent } from './components/information-openness/information-openness.component';
 import { RegulatoryFrameworkComponent } from './components/regulatory-framework/regulatory-framework.component';

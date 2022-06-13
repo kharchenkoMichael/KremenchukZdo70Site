@@ -16,8 +16,8 @@ namespace KremenchukZdo70Site.Controllers
             _employeeService = employeeService;
         }
 
-        [HttpGet()]
-        public async Task<ActionResult<CollectiveResponse>> GetPatternsAsync([FromQuery] CollectiveRequest request) 
+        [HttpPost()]
+        public async Task<ActionResult<CollectiveResponse>> GetCollectiveAsync([FromBody] CollectiveRequest request) 
             => await _employeeService.GetColectiveAsync(request);
     }
 }

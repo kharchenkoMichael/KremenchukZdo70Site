@@ -1,0 +1,11 @@
+<div class="card">
+  <img class="card-img-top" src="{{ employee.smallProfileUrl }}" />
+  <div class="card-body">
+    <h5 class="card-title">
+      {{ employee.lastName }} {{ employee.firstName }} {{ employee.secondName }}
+    </h5>
+    <p *ngFor="let jobTitleName of employee.jobTitleNames" class="card-text">
+      {{ jobTitleName }}
+    </p>
+  </div>
+</div>

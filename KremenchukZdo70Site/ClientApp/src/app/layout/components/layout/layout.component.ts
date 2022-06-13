@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LayoutState } from '../../../models/layout-state';
+import { LayoutState } from '../../../shared/models/layout-state';
 
 @Component({
   selector: 'app-layout',

@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { ContactsComponent } from './components/contacts/contacts.component';
-import { CollectiveComponent } from './components/collective/collective.component';
+import { CollectiveItemComponent } from './components/collective-item/collective-item.component';
 
 @NgModule({
-  declarations: [ContactsComponent, CollectiveComponent],
+  declarations: [ContactsComponent, CollectiveItemComponent],
   imports: [RouterModule, CommonModule],
-  exports: [ContactsComponent, CollectiveComponent],
+  exports: [ContactsComponent, CollectiveItemComponent],
 })
 export class SharedModule {}

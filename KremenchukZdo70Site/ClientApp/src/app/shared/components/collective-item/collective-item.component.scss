@@ -1,0 +1,22 @@
+.card {
+  margin: 10px 0px;
+  border-radius: 20px;
+  font-family: "Suplexmentary_Comic_NC";
+  color: rgb(111, 2, 158);
+
+  .card-img-top {
+    background: url("../../../assets/images/profile-empty.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 20px 20px 0px 0px;
+
+    height: 200px;
+  }
+
+  .card-body {
+    text-align: center;
+    color: rgb(38, 7, 139);
+    text-shadow: rgb(248, 195, 3) 1px 0 10px;
+  }
+}
