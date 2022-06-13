@@ -1,0 +1,12 @@
+C:\myProject\KremenchukZdo70Site\KremenchukZdo70Site.Domain\bin\Debug\net6.0\KremenchukZdo70Site.Domain.deps.json
+C:\myProject\KremenchukZdo70Site\KremenchukZdo70Site.Domain\bin\Debug\net6.0\KremenchukZdo70Site.Domain.dll
+C:\myProject\KremenchukZdo70Site\KremenchukZdo70Site.Domain\bin\Debug\net6.0\KremenchukZdo70Site.Domain.pdb
+C:\myProject\KremenchukZdo70Site\KremenchukZdo70Site.Domain\obj\Debug\net6.0\KremenchukZdo70Site.Domain.csproj.AssemblyReference.cache
+C:\myProject\KremenchukZdo70Site\KremenchukZdo70Site.Domain\obj\Debug\net6.0\KremenchukZdo70Site.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\myProject\KremenchukZdo70Site\KremenchukZdo70Site.Domain\obj\Debug\net6.0\KremenchukZdo70Site.Domain.AssemblyInfoInputs.cache
+C:\myProject\KremenchukZdo70Site\KremenchukZdo70Site.Domain\obj\Debug\net6.0\KremenchukZdo70Site.Domain.AssemblyInfo.cs
+C:\myProject\KremenchukZdo70Site\KremenchukZdo70Site.Domain\obj\Debug\net6.0\KremenchukZdo70Site.Domain.csproj.CoreCompileInputs.cache
+C:\myProject\KremenchukZdo70Site\KremenchukZdo70Site.Domain\obj\Debug\net6.0\KremenchukZdo70Site.Domain.dll
+C:\myProject\KremenchukZdo70Site\KremenchukZdo70Site.Domain\obj\Debug\net6.0\refint\KremenchukZdo70Site.Domain.dll
+C:\myProject\KremenchukZdo70Site\KremenchukZdo70Site.Domain\obj\Debug\net6.0\KremenchukZdo70Site.Domain.pdb
+C:\myProject\KremenchukZdo70Site\KremenchukZdo70Site.Domain\obj\Debug\net6.0\ref\KremenchukZdo70Site.Domain.dll

@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.SpaProxy" Version="6.0.4" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,7 +23,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\KremenchukZdo70Site.Domain\KremenchukZdo70Site.Domain.csproj" />
+    <ProjectReference Include="..\KremenchukZdo70Site.Infrastructure\KremenchukZdo70Site.Infrastructure.csproj" />
   </ItemGroup>
 
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

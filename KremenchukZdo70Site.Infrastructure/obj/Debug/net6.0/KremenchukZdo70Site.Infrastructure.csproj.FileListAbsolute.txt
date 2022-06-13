@@ -1,0 +1,17 @@
+C:\myProject\KremenchukZdo70Site\KremenchukZdo70Site.Infrastructure\bin\Debug\net6.0\KremenchukZdo70Site.Infrastructure.deps.json
+C:\myProject\KremenchukZdo70Site\KremenchukZdo70Site.Infrastructure\bin\Debug\net6.0\KremenchukZdo70Site.Infrastructure.runtimeconfig.json
+C:\myProject\KremenchukZdo70Site\KremenchukZdo70Site.Infrastructure\bin\Debug\net6.0\KremenchukZdo70Site.Infrastructure.dll
+C:\myProject\KremenchukZdo70Site\KremenchukZdo70Site.Infrastructure\bin\Debug\net6.0\KremenchukZdo70Site.Infrastructure.pdb
+C:\myProject\KremenchukZdo70Site\KremenchukZdo70Site.Infrastructure\bin\Debug\net6.0\KremenchukZdo70Site.Domain.dll
+C:\myProject\KremenchukZdo70Site\KremenchukZdo70Site.Infrastructure\bin\Debug\net6.0\KremenchukZdo70Site.Domain.pdb
+C:\myProject\KremenchukZdo70Site\KremenchukZdo70Site.Infrastructure\obj\Debug\net6.0\KremenchukZdo70Site.Infrastructure.csproj.AssemblyReference.cache
+C:\myProject\KremenchukZdo70Site\KremenchukZdo70Site.Infrastructure\obj\Debug\net6.0\KremenchukZdo70Site.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\myProject\KremenchukZdo70Site\KremenchukZdo70Site.Infrastructure\obj\Debug\net6.0\KremenchukZdo70Site.Infrastructure.AssemblyInfoInputs.cache
+C:\myProject\KremenchukZdo70Site\KremenchukZdo70Site.Infrastructure\obj\Debug\net6.0\KremenchukZdo70Site.Infrastructure.AssemblyInfo.cs
+C:\myProject\KremenchukZdo70Site\KremenchukZdo70Site.Infrastructure\obj\Debug\net6.0\KremenchukZdo70Site.Infrastructure.csproj.CoreCompileInputs.cache
+C:\myProject\KremenchukZdo70Site\KremenchukZdo70Site.Infrastructure\obj\Debug\net6.0\KremenchukZdo70Site.Infrastructure.csproj.CopyComplete
+C:\myProject\KremenchukZdo70Site\KremenchukZdo70Site.Infrastructure\obj\Debug\net6.0\KremenchukZdo70Site.Infrastructure.dll
+C:\myProject\KremenchukZdo70Site\KremenchukZdo70Site.Infrastructure\obj\Debug\net6.0\refint\KremenchukZdo70Site.Infrastructure.dll
+C:\myProject\KremenchukZdo70Site\KremenchukZdo70Site.Infrastructure\obj\Debug\net6.0\KremenchukZdo70Site.Infrastructure.pdb
+C:\myProject\KremenchukZdo70Site\KremenchukZdo70Site.Infrastructure\obj\Debug\net6.0\KremenchukZdo70Site.Infrastructure.genruntimeconfig.cache
+C:\myProject\KremenchukZdo70Site\KremenchukZdo70Site.Infrastructure\obj\Debug\net6.0\ref\KremenchukZdo70Site.Infrastructure.dll
