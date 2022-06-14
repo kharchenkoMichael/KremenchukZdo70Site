@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ContactsService } from '@base/services/web-api/contacts/contacts.service';
+import { ContactsDataResponse } from '@shared/models/contacts-data-response';
 
 @Component({
   selector: 'app-contacts',
@@ -6,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contacts.component.scss'],
 })
 export class ContactsComponent implements OnInit {
-  constructor() {}
+  public contacts: ContactsDataResponse[] = [];
 
-  ngOnInit(): void {}
+  constructor(private readonly contactsService: ContactsService) {}
+
+  ngOnInit(): void {
+    this.contactsService
+      .getCollectiveAsync()
+      .subscribe((result) => (this.contacts = result));
+  }
 }

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 //import { HttpClient } from '@angular/common/http';
 
 import { EmployeeService } from './web-api/employee/employee.service';
+import { ContactsService } from './web-api/contacts/contacts.service';
 
 @NgModule({
   declarations: [],
@@ -10,6 +11,7 @@ import { EmployeeService } from './web-api/employee/employee.service';
   providers: [
     // web-api
     EmployeeService,
+    ContactsService,
   ],
 })
 export class CoreModule {}

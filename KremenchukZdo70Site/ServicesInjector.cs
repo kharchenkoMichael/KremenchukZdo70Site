@@ -10,6 +10,7 @@ namespace KremenchukZdo70Site
         public static void ConfigureServices(this IServiceCollection services)
         {
             services.AddScoped<IEmployeeService, EmployeeService>();
+            services.AddScoped<IContactsDataService, ContactsDataService>();
         }
 
         public static void ConfigureDbContext(this IServiceCollection services, IConfiguration config)

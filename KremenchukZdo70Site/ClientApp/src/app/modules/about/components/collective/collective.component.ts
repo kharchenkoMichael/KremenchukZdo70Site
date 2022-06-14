@@ -10,9 +10,6 @@ import { CollectiveRequest } from '@shared/models/collective-request';
 })
 export class CollectiveComponent implements OnInit {
   public collective: CollectiveItemResponse[] = [];
-  // private readonly subscriptions = new Subscription();
-  // private searchSubject: Subject<PaginationData> =
-  // new Subject<PaginationData>();
 
   constructor(private readonly employeeService: EmployeeService) {}
 

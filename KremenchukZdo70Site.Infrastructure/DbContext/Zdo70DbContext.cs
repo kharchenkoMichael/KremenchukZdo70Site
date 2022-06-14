@@ -15,5 +15,6 @@ namespace KremenchukZdo70Site.Infrastructure
         }
 
         public virtual DbSet<Employee> Employee { get; set; } = null!;
+        public virtual DbSet<ContactsData> ContactsData { get; set; } = null!;
     }
 }

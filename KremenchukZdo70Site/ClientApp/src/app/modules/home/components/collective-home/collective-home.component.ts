@@ -13,9 +13,6 @@ export class CollectiveHomeComponent implements OnInit {
   public currentPage: number = 0;
   public allPages: number[] = [];
   private size: number = 4;
-  // private readonly subscriptions = new Subscription();
-  // private searchSubject: Subject<PaginationData> =
-  // new Subject<PaginationData>();
 
   constructor(private readonly employeeService: EmployeeService) {}
 
