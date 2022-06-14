@@ -3,24 +3,62 @@
   font-family: "Suplexmentary_Comic_NC";
   color: rgb(111, 2, 158);
 
-  .card {
-    margin: 10px 0px;
-    border-radius: 20px;
+  .left-arrow {
+    background-color: rgba(0, 0, 0, 0.1);
+    background-image: url("../../../../assets/images/left-arrow.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 
-    .card-img-top {
-      background: url("../../../../assets/images/profile-empty.png");
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      border-radius: 20px 20px 0px 0px;
+  .right-arrow {
+    background-color: rgba(0, 0, 0, 0.1);
+    background-image: url("../../../../assets/images/right-arrow.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 
-      height: 200px;
+  .left-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .right-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .left-arrow.disable:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .right-arrow.disable:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  .disable {
+    background-image: none;
+  }
+
+  .paggination {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    button {
+      padding: 10px 20px;
+      background-color: aqua;
+      border-radius: 10px;
     }
 
-    .card-body {
-      text-align: center;
-      color: rgb(38, 7, 139);
-      text-shadow: rgb(248, 195, 3) 1px 0 10px;
+    button:hover {
+      background-color: rgb(111, 2, 158);
+      color: aqua;
+    }
+
+    button.selected {
+      background-color: rgb(111, 2, 158);
+      color: aqua;
     }
   }
 }

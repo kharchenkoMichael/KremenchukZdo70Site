@@ -2,8 +2,31 @@
   <h3>Наш колектив</h3>
   <hr />
   <div class="row">
-    <div *ngFor="let employee of collective" class="col-2">
-      <app-collective-item [employee]="employee"></app-collective-item>
+    <div
+      class="col-1 left-arrow"
+      (click)="Previous()"
+      [class.disable]="currentPage <= 0"
+    ></div>
+    <div class="col-10">
+      <div class="row">
+        <div *ngFor="let employee of collective" class="col-3">
+          <app-collective-item [employee]="employee"></app-collective-item>
+        </div>
+      </div>
+      <div class="paggination">
+        <button
+          *ngFor="let page of allPages; let i = index"
+          [class.selected]="i === currentPage"
+          (click)="GoPage(i)"
+        >
+          {{ i + 1 }}
+        </button>
+      </div>
     </div>
+    <div
+      class="col-1 right-arrow"
+      (click)="Next()"
+      [class.disable]="currentPage >= allPages.length - 1"
+    ></div>
   </div>
 </div>

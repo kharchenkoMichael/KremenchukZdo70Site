@@ -11,7 +11,8 @@ import { CollectiveRequest } from '@shared/models/collective-request';
 export class CollectiveHomeComponent implements OnInit {
   public collective: CollectiveItemResponse[] = [];
   public currentPage: number = 0;
-  public allPageCount: number = 0;
+  public allPages: number[] = [];
+  private size: number = 4;
   // private readonly subscriptions = new Subscription();
   // private searchSubject: Subject<PaginationData> =
   // new Subject<PaginationData>();
@@ -19,13 +20,30 @@ export class CollectiveHomeComponent implements OnInit {
   constructor(private readonly employeeService: EmployeeService) {}
 
   ngOnInit(): void {
+    this.GoPage(0);
+  }
+
+  public GoPage(page: number) {
+    this.currentPage = page;
     var request = new CollectiveRequest();
     request.calcCountTotal = true;
-    request.page = 0;
-    request.size = 6;
+    request.page = page;
+    request.size = this.size;
     this.employeeService.getCollectiveAsync(request).subscribe((result) => {
       this.collective = result.data;
-      this.allPageCount = Math.ceil(result.totalCount / 6);
+      this.allPages = Array(Math.ceil(result.totalCount / this.size));
     });
+  }
+
+  public Previous() {
+    if (this.currentPage <= 0) return;
+
+    this.GoPage(this.currentPage - 1);
+  }
+
+  public Next() {
+    if (this.currentPage >= this.allPages.length - 1) return;
+
+    this.GoPage(this.currentPage + 1);
   }
 }
