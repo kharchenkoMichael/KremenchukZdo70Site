@@ -1,5 +1,4 @@
-﻿using KremenchukZdo70Site.Domain.Request;
-using KremenchukZdo70Site.Domain.Response;
+﻿using KremenchukZdo70Site.Domain.Response;
 using Microsoft.EntityFrameworkCore;
 
 namespace KremenchukZdo70Site.Infrastructure.Services

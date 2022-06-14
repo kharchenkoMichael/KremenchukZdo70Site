@@ -6,9 +6,14 @@ import { CollectiveComponent } from './components/collective/collective.componen
 import { AboutRoutingModule } from './about-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { CoreModule } from '@base/services/core.module';
+import { InformationOpennessComponent } from './components/information-openness/information-openness.component';
 
 @NgModule({
-  declarations: [AboutComponent, CollectiveComponent],
+  declarations: [
+    AboutComponent,
+    CollectiveComponent,
+    InformationOpennessComponent,
+  ],
   imports: [CommonModule, AboutRoutingModule, SharedModule, CoreModule],
 })
 export class AboutModule {}
