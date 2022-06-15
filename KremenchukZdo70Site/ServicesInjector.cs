@@ -12,6 +12,7 @@ namespace KremenchukZdo70Site
             services.AddScoped<IEmployeeService, EmployeeService>();
             services.AddScoped<IContactsDataService, ContactsDataService>();
             services.AddScoped<IInformationOpenService, InformationOpenService>();
+            services.AddScoped<IRegulatoryFrameworkService, RegulatoryFrameworkService>();
         }
 
         public static void ConfigureDbContext(this IServiceCollection services, IConfiguration config)

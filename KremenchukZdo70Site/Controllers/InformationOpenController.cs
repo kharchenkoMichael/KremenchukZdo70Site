@@ -16,7 +16,7 @@ namespace KremenchukZdo70Site.Controllers
         }
 
         [HttpGet()]
-        public async Task<IEnumerable<InformationOpenResponse>> GetContactsDataAsync()
+        public async Task<IEnumerable<InformationOpenResponse>> GetInformationOpenAsync()
         {
             return await _informationOpenService.GetInformationOpenAsync();
         }

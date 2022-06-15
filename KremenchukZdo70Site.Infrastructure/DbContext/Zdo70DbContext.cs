@@ -19,5 +19,7 @@ namespace KremenchukZdo70Site.Infrastructure
         public virtual DbSet<ContactsData> ContactsData { get; set; } = null!;
 
         public virtual DbSet<InformationOpen> InformationOpen { get; set; } = null!;
+
+        public virtual DbSet<RegulatoryFramework> RegulatoryFramework { get; set; } = null!;
     }
 }

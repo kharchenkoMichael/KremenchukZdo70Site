@@ -7,12 +7,14 @@ import { AboutRoutingModule } from './about-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { CoreModule } from '@base/services/core.module';
 import { InformationOpennessComponent } from './components/information-openness/information-openness.component';
+import { RegulatoryFrameworkComponent } from './components/regulatory-framework/regulatory-framework.component';
 
 @NgModule({
   declarations: [
     AboutComponent,
     CollectiveComponent,
     InformationOpennessComponent,
+    RegulatoryFrameworkComponent,
   ],
   imports: [CommonModule, AboutRoutingModule, SharedModule, CoreModule],
 })
