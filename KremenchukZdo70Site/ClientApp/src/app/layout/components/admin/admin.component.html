@@ -1,0 +1,77 @@
+<div class="background">
+  <div class="background-header"></div>
+  <div class="background-footer"></div>
+</div>
+<div class="container-fluid full-container">
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 name">
+          <a [routerLink]="['/admin']" class="name-text"
+            >Заклад дошкільної освіти №70 Адміністративна панель</a
+          >
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="container content">
+      <div class="row">
+        <div class="col-4">
+          <ul class="nav flex-column menu">
+            <li
+              class="nav-item menu-item first-menu-item"
+              [class.active]="state === adminState.Collective"
+            >
+              <a
+                class="nav-link"
+                [routerLink]="['/admin/collective']"
+                (click)="ChangeState(adminState.Collective)"
+                >Колектив</a
+              >
+            </li>
+            <li
+              class="nav-item menu-item"
+              [class.active]="state === adminState.Contacts"
+            >
+              <a
+                class="nav-link"
+                [routerLink]="['/admin/contacts']"
+                (click)="ChangeState(adminState.Contacts)"
+                >Контакти</a
+              >
+            </li>
+            <li
+              class="nav-item menu-item"
+              [class.active]="state === adminState.InformationOpenness"
+            >
+              <a
+                class="nav-link"
+                [routerLink]="['/admin/information-openness']"
+                (click)="ChangeState(adminState.InformationOpenness)"
+                >Інформаційна відкритість</a
+              >
+            </li>
+            <li
+              class="nav-item menu-item last-menu-item"
+              [class.active]="state === adminState.RegulatoryFramework"
+            >
+              <a
+                class="nav-link"
+                [routerLink]="['/admin/regulatory-framework']"
+                (click)="ChangeState(adminState.RegulatoryFramework)"
+                >Нормативно-правова база</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="col-8">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="container">© Заклад дошкільної освіти №70. м. Кременчук</div>
+  </footer>
+</div>
