@@ -1,4 +1,5 @@
 export class RegulatoryFrameworkResponse {
-  name: string | undefined;
-  href: string | undefined;
+  id: number = 0;
+  name: string = '';
+  href: string = '';
 }

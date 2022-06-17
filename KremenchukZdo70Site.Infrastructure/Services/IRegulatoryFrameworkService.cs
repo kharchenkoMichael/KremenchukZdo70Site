@@ -6,5 +6,9 @@ namespace KremenchukZdo70Site.Infrastructure.Services
 
     {
         Task<IEnumerable<RegulatoryFrameworkResponse>> GetRegulatoryFrameworkAsync();
+        Task<RegulatoryFrameworkResponse> GetInformationOpenByIdAsync(int id);
+        Task<int> CtreateInformationOpenAsync(RegulatoryFrameworkRequest request);
+        Task<RegulatoryFrameworkResponse> UpdateInformationOpenAsync(RegulatoryFrameworkRequest request);
+        Task DeleteContactDataAsync(int id);
     }
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InformationOpenService } from '@base/services/web-api/information-open/information-open.service';
-import { InformationOpenResponse } from '@shared/models/information-open-response copy';
+import { InformationOpenResponse } from '@shared/models/information-open-response';
 
 @Component({
   selector: 'app-information-openness',

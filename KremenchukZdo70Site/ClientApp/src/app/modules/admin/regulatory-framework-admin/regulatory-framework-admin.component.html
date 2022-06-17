@@ -1,9 +1,23 @@
 <div class="content">
   <h3>Нормативно-правова база</h3>
   <hr />
-  <p *ngFor="let regulatoryFramework of regulatoryFrameworks">
-    <a href="{{ regulatoryFramework.href }}}" target="_blank">{{
-      regulatoryFramework.name
-    }}</a>
-  </p>
+  <div *ngFor="let regulatoryFramework of regulatoryFrameworks">
+    <input
+      type="text"
+      class="name"
+      (focusout)="onNameFocusOutEvent($event, regulatoryFramework)"
+      [value]="regulatoryFramework.name"
+    /><br />
+    <input
+      type="text"
+      (focusout)="onHrefFocusOutEvent($event, regulatoryFramework)"
+      [value]="regulatoryFramework.href"
+    /><br />
+    <button class="remove" (click)="remove(regulatoryFramework)">
+      Видалити
+    </button>
+    <br />
+  </div>
+  <br />
+  <button class="add" (click)="add()">Додати</button>
 </div>

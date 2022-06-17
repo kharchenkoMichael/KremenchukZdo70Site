@@ -20,5 +20,41 @@ namespace KremenchukZdo70Site.Controllers
         {
             return await _informationOpenService.GetInformationOpenAsync();
         }
+
+
+        [HttpGet("{id}")]
+        public async Task<InformationOpenResponse> GetInformationOpenByIdAsync(int id)
+        {
+            return await _informationOpenService.GetInformationOpenByIdAsync(id);
+        }
+
+        [HttpPost()]
+        public async Task<int> CtreateInformationOpenAsync([FromBody] InformationOpenRequest request)
+        {
+            if (request == null || request.Name == null || request.Href == null)
+            {
+                throw new BadHttpRequestException($"request bad : {request}");
+            }
+
+            return await _informationOpenService.CtreateInformationOpenAsync(request);
+        }
+
+        [HttpPut()]
+        public async Task<InformationOpenResponse> UpdateInformationOpenAsync([FromBody] InformationOpenRequest request)
+        {
+            if (request == null || request.Name == null || request.Href == null)
+            {
+                throw new BadHttpRequestException($"request bad : {request}");
+            }
+
+            return await _informationOpenService.UpdateInformationOpenAsync(request);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteContactDataAsync(int id)
+        {
+            await _informationOpenService.DeleteContactDataAsync(id);
+            return Ok();
+        }
     }
 }

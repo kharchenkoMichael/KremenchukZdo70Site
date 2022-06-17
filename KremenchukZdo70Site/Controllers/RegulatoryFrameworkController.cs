@@ -20,5 +20,40 @@ namespace KremenchukZdo70Site.Controllers
         {
             return await _regulatoryFrameworkService.GetRegulatoryFrameworkAsync();
         }
+
+        [HttpGet("{id}")]
+        public async Task<RegulatoryFrameworkResponse> GetInformationOpenByIdAsync(int id)
+        {
+            return await _regulatoryFrameworkService.GetInformationOpenByIdAsync(id);
+        }
+
+        [HttpPost()]
+        public async Task<int> CtreateInformationOpenAsync([FromBody] RegulatoryFrameworkRequest request)
+        {
+            if (request == null || request.Name == null || request.Href == null)
+            {
+                throw new BadHttpRequestException($"request bad : {request}");
+            }
+
+            return await _regulatoryFrameworkService.CtreateInformationOpenAsync(request);
+        }
+
+        [HttpPut()]
+        public async Task<RegulatoryFrameworkResponse> UpdateInformationOpenAsync([FromBody] RegulatoryFrameworkRequest request)
+        {
+            if (request == null || request.Name == null || request.Href == null)
+            {
+                throw new BadHttpRequestException($"request bad : {request}");
+            }
+
+            return await _regulatoryFrameworkService.UpdateInformationOpenAsync(request);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteContactDataAsync(int id)
+        {
+            await _regulatoryFrameworkService.DeleteContactDataAsync(id);
+            return Ok();
+        }
     }
 }
