@@ -1,0 +1,9 @@
+<div class="content">
+  <h3>Наш колектив</h3>
+  <hr />
+  <div class="row">
+    <div *ngFor="let employee of collective" class="col-3">
+      <app-collective-item [employee]="employee"></app-collective-item>
+    </div>
+  </div>
+</div>

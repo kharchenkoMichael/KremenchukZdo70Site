@@ -4,11 +4,11 @@ import { AdminState } from '@shared/models/admin-state';
 import { LayoutState } from '../../../shared/models/layout-state';
 
 @Component({
-  selector: 'app-admin',
-  templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.scss'],
+  selector: 'app-admin-layout',
+  templateUrl: './admin-layout.component.html',
+  styleUrls: ['./admin-layout.component.scss'],
 })
-export class AdminComponent implements OnInit {
+export class AdminLayoutComponent implements OnInit {
   public get adminState(): typeof AdminState {
     return AdminState;
   }

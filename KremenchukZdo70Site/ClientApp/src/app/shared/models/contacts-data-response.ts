@@ -1,4 +1,5 @@
 export class ContactsDataResponse {
-  name: string | undefined;
-  value: string | undefined;
+  id: number = 0;
+  name: string = '';
+  value: string = '';
 }

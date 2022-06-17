@@ -1,0 +1,9 @@
+<div class="content">
+  <h3>Нормативно-правова база</h3>
+  <hr />
+  <p *ngFor="let regulatoryFramework of regulatoryFrameworks">
+    <a href="{{ regulatoryFramework.href }}}" target="_blank">{{
+      regulatoryFramework.name
+    }}</a>
+  </p>
+</div>

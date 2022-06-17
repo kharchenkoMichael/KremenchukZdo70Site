@@ -20,5 +20,41 @@ namespace KremenchukZdo70Site.Controllers
         {
             return await _contactsDataService.GetContactsDataAsync();
         }
+
+
+        [HttpGet("{id}")]
+        public async Task<ContactsDataResponse> GetContactDataByIdAsync(int id)
+        {
+            return await _contactsDataService.GetContactDataByIdAsync(id);
+        }
+
+        [HttpPost()]
+        public async Task<int> CtreateContactDataAsync([FromBody]ContactsDataRequest request)
+        {
+            if (request == null || request.Name == null || request.Value == null)
+            {
+                throw new BadHttpRequestException($"request bad : {request}");
+            }
+
+            return await _contactsDataService.CreateContactDataAsync(request);
+        }
+
+        [HttpPut()]
+        public async Task<ContactsDataResponse> UpdateContactDataAsync([FromBody]ContactsDataRequest request)
+        {
+            if (request==null || request.Name == null || request.Value == null)
+            {
+                throw new BadHttpRequestException($"request bad : {request}");
+            }
+
+            return await _contactsDataService.UpdateContactDataAsync(request);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteContactDataAsync(int id)
+        {
+            await _contactsDataService.DeleteContactDataAsync(id);
+            return Ok();
+        }
     }
 }

@@ -1,0 +1,21 @@
+<div>
+  <h3>Контактна інформація</h3>
+  <hr />
+  <div *ngFor="let contact of contacts">
+    <input
+      type="text"
+      class="name"
+      (focusout)="onNameFocusOutEvent($event, contact)"
+      [value]="contact.name"
+    /><br />
+    <input
+      type="text"
+      (focusout)="onValueFocusOutEvent($event, contact)"
+      [value]="contact.value"
+    /><br />
+    <button class="remove" (click)="remove(contact)">Видалити</button>
+    <br />
+  </div>
+  <br />
+  <button class="add" (click)="add()">Додати</button>
+</div>

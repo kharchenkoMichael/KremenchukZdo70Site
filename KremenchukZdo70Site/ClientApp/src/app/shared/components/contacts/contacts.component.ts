@@ -14,7 +14,7 @@ export class ContactsComponent implements OnInit {
 
   ngOnInit(): void {
     this.contactsService
-      .getCollectiveAsync()
+      .getContactsAsync()
       .subscribe((result) => (this.contacts = result));
   }
 }

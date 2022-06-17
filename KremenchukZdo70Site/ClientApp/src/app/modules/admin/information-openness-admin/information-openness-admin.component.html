@@ -1,0 +1,11 @@
+<div class="content">
+  <h3>Інформаційна відкритість</h3>
+  <hr />
+  <ul>
+    <li *ngFor="let information of informationOpens">
+      <a href="{{ information.href }}" target="_blank">{{
+        information.name
+      }}</a>
+    </li>
+  </ul>
+</div>
