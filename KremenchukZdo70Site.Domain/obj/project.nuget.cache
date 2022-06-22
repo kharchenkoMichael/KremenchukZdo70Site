@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "PS0YEHdVWUz9Npry+XSo/r18UIOSeTtTU3mHBtv8QHesiOLZldYYmskOyreD83TYIeMRSkXccp7KXlqcoGkd4Q==",
+  "dgSpecHash": "yuoib3XVWSPsCUpOsRxGYA0QSYQDgNXCW0CqxRi94GFHoFD2U8/+d9jp8hFIqDq4r9sEB9iUQo3uIVqdyD5jCg==",
   "success": true,
   "projectFilePath": "C:\\myProject\\KremenchukZdo70Site\\KremenchukZdo70Site.Domain\\KremenchukZdo70Site.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\mykhailo.kharchenko\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\mykhailo.kharchenko\\.nuget\\packages\\microsoft.identitymodel.logging\\6.8.0\\microsoft.identitymodel.logging.6.8.0.nupkg.sha512",
+    "C:\\Users\\mykhailo.kharchenko\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.8.0\\microsoft.identitymodel.tokens.6.8.0.nupkg.sha512",
+    "C:\\Users\\mykhailo.kharchenko\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512"
+  ],
   "logs": []
 }

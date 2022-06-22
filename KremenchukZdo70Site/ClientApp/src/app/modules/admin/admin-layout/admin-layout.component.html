@@ -6,10 +6,16 @@
   <header>
     <div class="container">
       <div class="row">
-        <div class="col-12 name">
+        <div class="col-2 home">
+          <a [routerLink]="['/home']" class="home-text">На головну</a>
+        </div>
+        <div class="col-8 name">
           <a [routerLink]="['/admin']" class="name-text"
             >Заклад дошкільної освіти №70 Адміністративна панель</a
           >
+        </div>
+        <div class="col-2 logout">
+          <a (click)="Logout()" class="logout-text">Вийти</a>
         </div>
       </div>
     </div>

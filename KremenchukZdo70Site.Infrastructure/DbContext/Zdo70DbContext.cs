@@ -21,5 +21,6 @@ namespace KremenchukZdo70Site.Infrastructure
         public virtual DbSet<InformationOpen> InformationOpen { get; set; } = null!;
 
         public virtual DbSet<RegulatoryFramework> RegulatoryFramework { get; set; } = null!;
+        public virtual DbSet<User> User { get; set; } = null!;
     }
 }

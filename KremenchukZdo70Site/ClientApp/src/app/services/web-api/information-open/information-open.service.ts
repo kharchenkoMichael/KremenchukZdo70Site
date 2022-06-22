@@ -30,8 +30,8 @@ export class InformationOpenService {
 
   public createInformationOpenAsync(
     request: InformationOpenRequest
-  ): Observable<InformationOpenResponse> {
-    return this.http.post<InformationOpenResponse>(
+  ): Observable<number> {
+    return this.http.post<number>(
       `${this.baseUrl}api/InformationOpen`,
       request
     );

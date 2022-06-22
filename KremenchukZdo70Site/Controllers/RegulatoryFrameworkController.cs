@@ -1,5 +1,6 @@
 ﻿using KremenchukZdo70Site.Domain.Response;
 using KremenchukZdo70Site.Infrastructure.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace KremenchukZdo70Site.Controllers
@@ -15,12 +16,14 @@ namespace KremenchukZdo70Site.Controllers
             _regulatoryFrameworkService = regulatoryFrameworkService;
         }
 
+        [AllowAnonymous]
         [HttpGet()]
         public async Task<IEnumerable<RegulatoryFrameworkResponse>> GetRegulatoryFrameworkAsync()
         {
             return await _regulatoryFrameworkService.GetRegulatoryFrameworkAsync();
         }
 
+        [AllowAnonymous]
         [HttpGet("{id}")]
         public async Task<RegulatoryFrameworkResponse> GetInformationOpenByIdAsync(int id)
         {

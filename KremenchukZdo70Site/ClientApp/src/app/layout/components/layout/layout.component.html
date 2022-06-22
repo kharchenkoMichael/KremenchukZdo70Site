@@ -61,5 +61,10 @@
   </main>
   <footer>
     <div class="container">© Заклад дошкільної освіти №70. м. Кременчук</div>
+    <div class="container">
+      <a [routerLink]="['/admin']" class="admin" *ngIf="isAuthenticated">
+        Адміністративна панель
+      </a>
+    </div>
   </footer>
 </div>

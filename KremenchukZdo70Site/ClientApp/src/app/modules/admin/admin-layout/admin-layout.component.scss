@@ -55,12 +55,39 @@
 
       .name-text {
         margin: auto; /* Important */
-        font-size: 35px;
+        font-size: 30px;
         font-family: "Suplexmentary_Comic_NC";
         text-shadow: rgb(248, 195, 3) 1px 0 10px;
         color: rgb(13, 3, 104);
 
         text-decoration: none;
+      }
+    }
+    .home {
+      display: flex;
+
+      .home-text {
+        margin: auto; /* Important */
+        font-size: 20px;
+        font-family: "Suplexmentary_Comic_NC";
+        text-shadow: rgb(248, 195, 3) 1px 0 10px;
+        color: rgb(13, 3, 104);
+
+        text-decoration: none;
+      }
+    }
+    .logout {
+      display: flex;
+
+      .logout-text {
+        margin: auto; /* Important */
+        font-size: 20px;
+        font-family: "Suplexmentary_Comic_NC";
+        text-shadow: rgb(248, 195, 3) 1px 0 10px;
+        color: rgb(13, 3, 104);
+
+        text-decoration: none;
+        cursor: pointer;
       }
     }
   }

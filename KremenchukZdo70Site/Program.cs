@@ -8,6 +8,17 @@ builder.Services.AddControllersWithViews();
 builder.Services.ConfigureSwagger();
 builder.Services.ConfigureServices();
 builder.Services.ConfigureDbContext(builder.Configuration);
+builder.Services.ConfigureAuthOptions(builder.Configuration);
+
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(builder =>
+    {
+        builder.AllowAnyOrigin()
+        .AllowAnyMethod()
+        .AllowAnyHeader();
+    });
+});
 
 var app = builder.Build();
 
@@ -27,6 +38,15 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 
+app.UseCors();
+
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapControllers().RequireAuthorization();
+});
 
 app.MapControllerRoute(
     name: "default",

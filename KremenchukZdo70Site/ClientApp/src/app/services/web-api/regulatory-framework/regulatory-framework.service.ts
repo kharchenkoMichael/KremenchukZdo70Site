@@ -32,8 +32,8 @@ export class RegulatoryFrameworkService {
 
   public createInformationOpenAsync(
     request: RegulatoryFrameworkRequest
-  ): Observable<RegulatoryFrameworkResponse> {
-    return this.http.post<RegulatoryFrameworkResponse>(
+  ): Observable<number> {
+    return this.http.post<number>(
       `${this.baseUrl}api/RegulatoryFramework`,
       request
     );

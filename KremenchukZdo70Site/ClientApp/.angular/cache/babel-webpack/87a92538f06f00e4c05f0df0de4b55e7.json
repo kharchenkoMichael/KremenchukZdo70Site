@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class InformationOpenRequest {\n  constructor() {\n    this.id = 0;\n    this.name = '';\n    this.href = '';\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}

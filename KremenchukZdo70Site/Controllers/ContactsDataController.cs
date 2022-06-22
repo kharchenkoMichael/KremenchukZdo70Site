@@ -1,5 +1,6 @@
 ﻿using KremenchukZdo70Site.Domain.Response;
 using KremenchukZdo70Site.Infrastructure.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace KremenchukZdo70Site.Controllers
@@ -15,6 +16,7 @@ namespace KremenchukZdo70Site.Controllers
             _contactsDataService = contactsDataService;
         }
 
+        [AllowAnonymous]
         [HttpGet()]
         public async Task<IEnumerable<ContactsDataResponse>> GetContactsDataAsync()
         {
@@ -22,6 +24,7 @@ namespace KremenchukZdo70Site.Controllers
         }
 
 
+        [AllowAnonymous]
         [HttpGet("{id}")]
         public async Task<ContactsDataResponse> GetContactDataByIdAsync(int id)
         {

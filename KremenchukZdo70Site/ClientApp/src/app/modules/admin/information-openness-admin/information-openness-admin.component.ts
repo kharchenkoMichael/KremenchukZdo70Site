@@ -32,10 +32,6 @@ export class InformationOpennessAdminComponent implements OnInit {
   }
 
   public add() {
-    for (let i = 0; i < this.informationOpens.length; i++) {
-      console.log(this.informationOpens[i]);
-    }
-
     var informationOpen = new InformationOpenResponse();
     informationOpen.name = 'Назва за замовчуванням';
     informationOpen.href = 'Ссилка за замовчуванням';
@@ -47,7 +43,7 @@ export class InformationOpennessAdminComponent implements OnInit {
 
     this.informationOpenService
       .createInformationOpenAsync(request)
-      .subscribe((result) => (informationOpen = result));
+      .subscribe((result) => (informationOpen.id = result));
   }
 
   onNameFocusOutEvent(event: any, informationOpen: InformationOpenResponse) {

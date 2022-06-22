@@ -1,0 +1,16 @@
+<div class="content" *ngIf="!isLoggedIn">
+  <div>
+    <div>
+      <label>Логін</label>
+      <input type="text" (change)="onNameFocusOutEvent($event)" />
+    </div>
+    <div>
+      <label>Пароль</label>
+      <input type="password" (change)="onPasswordFocusOutEvent($event)" />
+    </div>
+    <button (click)="login()">Вхід</button>
+  </div>
+</div>
+<div class="content" *ngIf="isLoggedIn">
+  <button (click)="logout()">Вихід</button>
+</div>

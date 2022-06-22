@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '@base/services/web-api/auth/auth.service';
 import { AdminState } from '@shared/models/admin-state';
 import { LayoutState } from '../../../shared/models/layout-state';
 
@@ -12,7 +13,7 @@ export class AdminLayoutComponent implements OnInit {
   public get adminState(): typeof AdminState {
     return AdminState;
   }
-  constructor(private router: Router) {
+  constructor(private router: Router, private authService: AuthService) {
     this.state = AdminState.None;
 
     if (this.router.url.startsWith('/admin/collective'))
@@ -42,5 +43,9 @@ export class AdminLayoutComponent implements OnInit {
 
   ChangeState(state: AdminState): void {
     this.state = state;
+  }
+
+  Logout() {
+    this.authService.logout();
   }
 }

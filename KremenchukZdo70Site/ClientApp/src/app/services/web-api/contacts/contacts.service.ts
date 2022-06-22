@@ -26,13 +26,8 @@ export class ContactsService {
     );
   }
 
-  public createContactAsync(
-    request: ContactsDataRequest
-  ): Observable<ContactsDataResponse> {
-    return this.http.post<ContactsDataResponse>(
-      `${this.baseUrl}api/ContactsData`,
-      request
-    );
+  public createContactAsync(request: ContactsDataRequest): Observable<number> {
+    return this.http.post<number>(`${this.baseUrl}api/ContactsData`, request);
   }
 
   public updateContactAsync(

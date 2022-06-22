@@ -28,10 +28,6 @@ export class ContactsAdminComponent implements OnInit {
   }
 
   public add() {
-    for (let i = 0; i < this.contacts.length; i++) {
-      console.log(this.contacts[i]);
-    }
-
     var contact = new ContactsDataResponse();
     contact.name = 'Назва за замовчуванням';
     contact.value = 'Значення за замовчуванням';
@@ -43,7 +39,7 @@ export class ContactsAdminComponent implements OnInit {
 
     this.contactsService
       .createContactAsync(request)
-      .subscribe((result) => (contact = result));
+      .subscribe((result) => (contact.id = result));
   }
 
   onNameFocusOutEvent(event: any, contact: ContactsDataResponse) {

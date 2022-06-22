@@ -1,0 +1,32 @@
+.content {
+  height: 100vh;
+  vertical-align: middle;
+  text-align: center;
+  padding: 100px;
+  font-family: "Suplexmentary_Comic_NC";
+
+  label {
+    width: 100px;
+    margin: 10px 20px;
+    color: rgb(143, 18, 143);
+    font-size: large;
+    font-weight: bold;
+  }
+
+  input {
+    width: 200px;
+    margin: 10px 20px;
+  }
+
+  button {
+    width: 300px;
+    margin: 10px 20px;
+    border-radius: 10px;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    background-color: rgb(143, 18, 143);
+  }
+
+  background: rgb(14, 234, 255);
+}

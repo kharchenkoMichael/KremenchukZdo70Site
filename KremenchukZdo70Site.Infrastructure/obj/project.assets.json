@@ -635,6 +635,9 @@
       "KremenchukZdo70Site.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.IdentityModel.Tokens": "6.8.0"
+        },
         "compile": {
           "bin/placeholder/KremenchukZdo70Site.Domain.dll": {}
         },

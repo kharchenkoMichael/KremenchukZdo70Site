@@ -33,53 +33,49 @@ export class RegulatoryFrameworkAdminComponent implements OnInit {
   }
 
   public add() {
-    for (let i = 0; i < this.regulatoryFrameworks.length; i++) {
-      console.log(this.regulatoryFrameworks[i]);
-    }
-
-    var informationOpen = new RegulatoryFrameworkResponse();
-    informationOpen.name = 'Назва за замовчуванням';
-    informationOpen.href = 'Ссилка за замовчуванням';
-    this.regulatoryFrameworks.push(informationOpen);
+    var regulatoryFramework = new RegulatoryFrameworkResponse();
+    regulatoryFramework.name = 'Назва за замовчуванням';
+    regulatoryFramework.href = 'Ссилка за замовчуванням';
+    this.regulatoryFrameworks.push(regulatoryFramework);
 
     var request = new RegulatoryFrameworkRequest();
-    request.name = informationOpen.name;
-    request.href = informationOpen.href;
+    request.name = regulatoryFramework.name;
+    request.href = regulatoryFramework.href;
 
     this.regulatoryFrameworkService
       .createInformationOpenAsync(request)
-      .subscribe((result) => (informationOpen = result));
+      .subscribe((result) => (regulatoryFramework.id = result));
   }
 
   onNameFocusOutEvent(
     event: any,
-    informationOpen: RegulatoryFrameworkResponse
+    regulatoryFramework: RegulatoryFrameworkResponse
   ) {
-    informationOpen.name = event.target.value;
+    regulatoryFramework.name = event.target.value;
 
     var request = new RegulatoryFrameworkRequest();
-    request.id = informationOpen.id;
-    request.name = informationOpen.name;
-    request.href = informationOpen.href;
+    request.id = regulatoryFramework.id;
+    request.name = regulatoryFramework.name;
+    request.href = regulatoryFramework.href;
 
     this.regulatoryFrameworkService
       .updateInformationOpenAsync(request)
-      .subscribe((result) => (informationOpen = result));
+      .subscribe((result) => (regulatoryFramework = result));
   }
 
   onHrefFocusOutEvent(
     event: any,
-    informationOpen: RegulatoryFrameworkResponse
+    regulatoryFramework: RegulatoryFrameworkResponse
   ) {
-    informationOpen.href = event.target.value;
+    regulatoryFramework.href = event.target.value;
 
     var request = new RegulatoryFrameworkRequest();
-    request.id = informationOpen.id;
-    request.name = informationOpen.name;
-    request.href = informationOpen.href;
+    request.id = regulatoryFramework.id;
+    request.name = regulatoryFramework.name;
+    request.href = regulatoryFramework.href;
 
     this.regulatoryFrameworkService
       .updateInformationOpenAsync(request)
-      .subscribe((result) => (informationOpen = result));
+      .subscribe((result) => (regulatoryFramework = result));
   }
 }

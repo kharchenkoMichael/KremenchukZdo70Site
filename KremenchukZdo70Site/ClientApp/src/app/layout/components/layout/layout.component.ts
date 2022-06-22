@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '@base/services/web-api/auth/auth.service';
 import { LayoutState } from '../../../shared/models/layout-state';
 
 @Component({
@@ -11,7 +12,11 @@ export class LayoutComponent implements OnInit {
   public get layoutState(): typeof LayoutState {
     return LayoutState;
   }
-  constructor(private router: Router) {
+  public get isAuthenticated(): boolean {
+    return this.authService.isAuthenticated();
+  }
+
+  constructor(private router: Router, private authService: AuthService) {
     this.state = LayoutState.None;
 
     if (this.router.url.startsWith('/home')) this.state = LayoutState.Home;
