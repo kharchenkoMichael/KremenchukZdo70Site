@@ -5,12 +5,12 @@
     <input
       type="text"
       class="name"
-      (focusout)="onNameFocusOutEvent($event, contact)"
+      (change)="onNameFocusOutEvent($event, contact)"
       [value]="contact.name"
     /><br />
     <input
       type="text"
-      (focusout)="onValueFocusOutEvent($event, contact)"
+      (change)="onValueFocusOutEvent($event, contact)"
       [value]="contact.value"
     /><br />
     <button class="remove" (click)="remove(contact)">Видалити</button>

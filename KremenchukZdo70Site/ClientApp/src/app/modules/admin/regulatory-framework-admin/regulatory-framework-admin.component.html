@@ -5,12 +5,12 @@
     <input
       type="text"
       class="name"
-      (focusout)="onNameFocusOutEvent($event, regulatoryFramework)"
+      (change)="onNameFocusOutEvent($event, regulatoryFramework)"
       [value]="regulatoryFramework.name"
     /><br />
     <input
       type="text"
-      (focusout)="onHrefFocusOutEvent($event, regulatoryFramework)"
+      (change)="onHrefFocusOutEvent($event, regulatoryFramework)"
       [value]="regulatoryFramework.href"
     /><br />
     <button class="remove" (click)="remove(regulatoryFramework)">
