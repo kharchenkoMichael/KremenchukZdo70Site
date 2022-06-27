@@ -23,4 +23,14 @@ export class EmployeeService {
       request
     );
   }
+
+  public getEmployeeAsync(id: number): Observable<CollectiveItemResponse> {
+    return this.http.get<CollectiveItemResponse>(
+      `${this.baseUrl}api/Employee/${id}`
+    );
+  }
+
+  public getEmployeeContentAsync(employeeId: number): Observable<string[]> {
+    return this.http.get<string[]>(`${this.baseUrl}api/Content/${employeeId}`);
+  }
 }

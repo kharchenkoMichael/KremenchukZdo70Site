@@ -1,0 +1,15 @@
+.content {
+  margin: 20px 0px;
+  font-family: "Suplexmentary_Comic_NC";
+  color: rgb(111, 2, 158);
+
+  .btn-collective {
+    color: white;
+    background-color: rgb(111, 2, 158);
+    border-color: rgb(146, 28, 197);
+    border-radius: 10px;
+  }
+  .btn-collective:hover {
+    background-color: rgb(146, 28, 197);
+  }
+}

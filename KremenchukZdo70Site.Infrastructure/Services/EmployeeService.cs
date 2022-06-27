@@ -1,4 +1,6 @@
-﻿using KremenchukZdo70Site.Domain.Request;
+﻿using System.Linq;
+using KremenchukZdo70Site.Domain.Entities;
+using KremenchukZdo70Site.Domain.Request;
 using KremenchukZdo70Site.Domain.Response;
 using Microsoft.EntityFrameworkCore;
 
@@ -28,6 +30,29 @@ namespace KremenchukZdo70Site.Infrastructure.Services
                 Count = collective.Count,
                 Data = collective,
             };
+        }
+
+        public async Task<CollectiveItemResponse> GetEmplyeeAsync(int id)
+        {
+            var employee = await _context.Employee
+                .Select(item => new CollectiveItemResponse
+                {
+                    Id = item.Id,
+                    FirstName = item.FirstName,
+                    SecondName = item.SecondName,
+                    LastName = item.LastName,
+                    SmallProfileUrl = item.SmallImageUrl,
+                    FullProfileUrl = item.FullImageUrl,
+                    JobTitleNames = item.EmployeeToJobTitles.Select(etj => etj.JobTitle.Name)
+                })
+                .FirstOrDefaultAsync(item => item.Id == id);
+
+            if (employee == null)
+            {
+                throw new ArgumentException(id + "notFound");
+            }
+
+            return employee;
         }
 
         private async Task<(int? TotalCount, IList<CollectiveItemResponse> Data)> SelectCollectiveAsync(CollectiveRequest request)

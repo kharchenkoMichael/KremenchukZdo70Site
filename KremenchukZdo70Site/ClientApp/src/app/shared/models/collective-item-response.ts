@@ -1,5 +1,5 @@
 export class CollectiveItemResponse {
-  id: number | undefined;
+  id: number = 0;
   firstName: string | undefined;
   secondName: string | undefined;
   lastName: string | undefined;

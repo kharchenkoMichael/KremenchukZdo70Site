@@ -21,5 +21,10 @@ namespace KremenchukZdo70Site.Controllers
         [HttpPost()]
         public async Task<ActionResult<CollectiveResponse>> GetCollectiveAsync([FromBody] CollectiveRequest request) 
             => await _employeeService.GetColectiveAsync(request);
+
+        [AllowAnonymous]
+        [HttpGet("{id}")]
+        public async Task<ActionResult<CollectiveItemResponse>> GetEmployeeAsync(int id)
+            => await _employeeService.GetEmplyeeAsync(id);
     }
 }

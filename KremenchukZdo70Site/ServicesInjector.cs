@@ -18,6 +18,7 @@ namespace KremenchukZdo70Site
             services.AddScoped<IRegulatoryFrameworkService, RegulatoryFrameworkService>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<ITokenService, TokenService>();
+            services.AddScoped<IContentService, ContentService>();
         }
 
         public static void ConfigureDbContext(this IServiceCollection services, IConfiguration config)

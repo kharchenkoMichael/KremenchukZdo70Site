@@ -1,0 +1,23 @@
+<div class="content">
+  <button class="btn-collective" (click)="toCollective()">
+    До усіх працівників
+  </button>
+  <hr />
+  <div class="row">
+    <div class="col-8">
+      <p *ngFor="let item of content">{{ item }}</p>
+    </div>
+    <div class="col-4">
+      <img class="card-img-top" src="{{ employee.fullProfileUrl }}" />
+      <div>
+        <h5>
+          {{ employee.lastName }} {{ employee.firstName }}
+          {{ employee.secondName }}
+        </h5>
+        <p *ngFor="let jobTitleName of employee.jobTitleNames">
+          {{ jobTitleName }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

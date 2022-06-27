@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from '../about/components/about/about.component';
 import { AntiBullyingComponent } from './components/anti-bullying/anti-bullying.component';
 import { CollectiveComponent } from './components/collective/collective.component';
+import { EmployeeComponent } from './components/employee/employee.component';
 import { FoodComponent } from './components/food/food.component';
 import { InformationOpennessComponent } from './components/information-openness/information-openness.component';
 import { RegulatoryFrameworkComponent } from './components/regulatory-framework/regulatory-framework.component';
@@ -22,6 +23,10 @@ const routes: Routes = [
       {
         path: 'collective',
         component: CollectiveComponent,
+      },
+      {
+        path: 'employee/:id',
+        component: EmployeeComponent,
       },
       {
         path: 'information-openness',

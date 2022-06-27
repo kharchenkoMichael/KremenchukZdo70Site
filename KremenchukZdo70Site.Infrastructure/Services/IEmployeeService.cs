@@ -6,5 +6,6 @@ namespace KremenchukZdo70Site.Infrastructure.Services
     public interface IEmployeeService
     {
         Task<CollectiveResponse> GetColectiveAsync(CollectiveRequest request);
+        Task<CollectiveItemResponse> GetEmplyeeAsync(int id);
     }
 }
