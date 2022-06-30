@@ -1,0 +1,1 @@
+{"ast":null,"code":"export class EmployeeToJobTitleResponse {\n  constructor() {\n    this.id = 0;\n    this.employeeId = 0;\n    this.jobTitleId = 0;\n  }\n\n}","map":null,"metadata":{},"sourceType":"module"}

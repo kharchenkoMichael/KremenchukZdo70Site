@@ -13,34 +13,24 @@ export class AboutComponent implements OnInit {
   }
   constructor(private router: Router) {
     this.state = AboutState.None;
+    this.reload();
+    this.router.events.subscribe(() => this.reload());
+  }
+
+  public isOpenedMenu: boolean = true;
+  public state: AboutState;
+
+  ngOnInit(): void {
+    this.reload();
+  }
+
+  private reload() {
+    this.state = AboutState.None;
 
     if (
       this.router.url.startsWith('/about/collective') ||
       this.router.url.startsWith('/about/employee')
     )
-      this.state = AboutState.Collective;
-
-    if (this.router.url.startsWith('/about/information-openness'))
-      this.state = AboutState.InformationOpenness;
-
-    if (this.router.url.startsWith('/about/regulatory-framework'))
-      this.state = AboutState.RegulatoryFramework;
-
-    if (this.router.url.startsWith('/about/food')) this.state = AboutState.Food;
-
-    if (this.router.url.startsWith('/about/anti-bullying'))
-      this.state = AboutState.AntiBullying;
-
-    if (this.router.url.startsWith('/about/special-educational-needs'))
-      this.state = AboutState.SpecialEducationalNeeds;
-  }
-
-  public state: AboutState;
-
-  ngOnInit(): void {
-    this.state = AboutState.None;
-
-    if (this.router.url.startsWith('/about/collective'))
       this.state = AboutState.Collective;
 
     if (this.router.url.startsWith('/about/information-openness'))

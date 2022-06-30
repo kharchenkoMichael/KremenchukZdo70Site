@@ -6,16 +6,23 @@
   <header>
     <div class="container">
       <div class="row">
-        <div class="col-5 name">
+        <div class="col-12 col-lg-5 name">
           <a [routerLink]="['/home']" class="name-text"
             >Заклад дошкільної освіти №70</a
           >
+          <button
+            class="btn-menu d-block d-lg-none"
+            (click)="isOpenedMenu = !isOpenedMenu"
+          >
+            <span *ngIf="isOpenedMenu">Сховати меню</span>
+            <span *ngIf="!isOpenedMenu">Меню</span>
+          </button>
         </div>
-        <div class="col-7 menu">
+        <div class="col-12 col-lg-7 menu">
           <div class="container-fluid">
-            <div class="row menu">
+            <div *ngIf="isOpenedMenu" class="row menu">
               <div
-                class="col-4 menu-item"
+                class="col-12 col-lg-4 menu-item"
                 [class.active]="state === layoutState.Home"
               >
                 <a
@@ -27,7 +34,7 @@
                 </a>
               </div>
               <div
-                class="col-4 menu-item"
+                class="col-12 col-lg-4 menu-item"
                 [class.active]="state === layoutState.About"
               >
                 <a
@@ -38,7 +45,7 @@
                 >
               </div>
               <div
-                class="col-4 menu-item"
+                class="col-12 col-lg-4 menu-item"
                 [class.active]="state === layoutState.Contacts"
               >
                 <a

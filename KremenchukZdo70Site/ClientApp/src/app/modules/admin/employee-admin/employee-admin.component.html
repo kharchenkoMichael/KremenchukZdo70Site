@@ -1,10 +1,16 @@
 <div class="content">
-  <button class="btn-collective" (click)="toCollective()">
-    До усіх працівників
-  </button>
+  <div class="buttons">
+    <button class="btn-collective" (click)="toCollective()">
+      До усіх працівників
+    </button>
+    <button class="btn-save" (click)="add()">
+      Додати нового співробітника
+    </button>
+    <button class="btn-remove" (click)="remove()">Видалити</button>
+  </div>
   <hr />
   <div class="row">
-    <div class="col-6">
+    <div class="col-12 col-sm-6 col-lg-8 order-2 order-sm-1">
       <div class="content-container" *ngFor="let item of contents">
         <button class="btn-remove" (click)="removeContent(item)">
           Видалити строку
@@ -17,14 +23,7 @@
       </div>
       <button class="btn-save" (click)="addContent()">Додати строку</button>
     </div>
-    <div class="col-6">
-      <div class="buttons">
-        <button class="btn-save" (click)="add()">
-          Додати нового співробітника
-        </button>
-        <button class="btn-remove" (click)="remove()">Видалити</button>
-      </div>
-      <hr />
+    <div class="col-12 col-sm-6 col-lg-4 order-1 order-sm-2 profile-info">
       <div>
         <label class="col-4">Велике фото</label>
         <img class="img-card" src="{{ employee.fullProfileUrl }}" />

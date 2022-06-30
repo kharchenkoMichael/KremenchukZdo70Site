@@ -62,6 +62,10 @@
 
         text-decoration: none;
       }
+
+      .name-text:hover {
+        color: rgb(186, 33, 206);
+      }
     }
     .home {
       display: flex;
@@ -74,6 +78,10 @@
         color: rgb(13, 3, 104);
 
         text-decoration: none;
+      }
+
+      .home-text:hover {
+        color: rgb(186, 33, 206);
       }
     }
     .logout {
@@ -88,6 +96,10 @@
 
         text-decoration: none;
         cursor: pointer;
+      }
+
+      .logout-text:hover {
+        color: rgb(186, 33, 206);
       }
     }
   }
@@ -119,11 +131,26 @@
 
         .first-menu-item {
           border-top: 0px;
-          border-radius: 17px 17px 0px 0px;
+          border-top-left-radius: 17px;
+          border-top-right-radius: 17px;
         }
 
         .last-menu-item {
-          border-radius: 0px 0px 17px 17px;
+          border-bottom-left-radius: 17px;
+          border-bottom-right-radius: 17px;
+        }
+
+        .nav-btn {
+          font-family: "Suplexmentary_Comic_NC";
+          font-size: large;
+          background-color: rgb(97, 1, 138);
+          a {
+            color: white;
+          }
+        }
+
+        .nav-btn:hover {
+          background-color: rgb(38, 0, 54);
         }
 
         .active {

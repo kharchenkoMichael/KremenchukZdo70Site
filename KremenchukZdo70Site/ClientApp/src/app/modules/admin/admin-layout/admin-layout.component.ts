@@ -13,6 +13,8 @@ export class AdminLayoutComponent implements OnInit {
   public get adminState(): typeof AdminState {
     return AdminState;
   }
+
+  public isOpenedMenu: boolean = true;
   public state: AdminState;
 
   constructor(private router: Router, private authService: AuthService) {

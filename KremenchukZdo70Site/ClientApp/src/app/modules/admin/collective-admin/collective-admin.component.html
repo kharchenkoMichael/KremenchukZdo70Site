@@ -3,7 +3,7 @@
   <button class="btn-save" (click)="add()">Додати нового співробітника</button>
   <hr />
   <div class="row">
-    <div *ngFor="let employee of collective" class="col-3">
+    <div *ngFor="let employee of collective" class="col-6 col-lg-4 col-xl-3">
       <app-collective-item
         [employee]="employee"
         [isAdmin]="true"

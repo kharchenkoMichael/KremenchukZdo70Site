@@ -4,10 +4,7 @@
   </button>
   <hr />
   <div class="row">
-    <div class="col-8">
-      <p *ngFor="let item of contents">{{ item.value }}</p>
-    </div>
-    <div class="col-4">
+    <div class="col-12 col-sm-6 col-lg-4 order-1 order-sm-2 profile-info">
       <img class="card-img-top" src="{{ employee.fullProfileUrl }}" />
       <div>
         <h5>
@@ -18,6 +15,9 @@
           {{ jobTitle.name }}
         </p>
       </div>
+    </div>
+    <div class="col-12 col-sm-6 col-lg-8 order-2 order-sm-1">
+      <p *ngFor="let item of contents">{{ item.value }}</p>
     </div>
   </div>
 </div>

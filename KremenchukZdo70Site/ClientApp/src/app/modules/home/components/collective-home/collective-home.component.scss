@@ -3,6 +3,10 @@
   font-family: "Suplexmentary_Comic_NC";
   color: rgb(111, 2, 158);
 
+  .collective-label:hover {
+    color: rgb(81, 7, 110);
+  }
+
   .left-arrow {
     background-color: rgba(0, 0, 0, 0.1);
     background-image: url("../../../../assets/images/left-arrow.png");
@@ -46,7 +50,7 @@
     align-items: center;
 
     button {
-      padding: 10px 20px;
+      padding: 5px 10px;
       background-color: aqua;
       border-radius: 10px;
     }

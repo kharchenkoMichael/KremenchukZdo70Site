@@ -27,6 +27,8 @@ export class LayoutComponent implements OnInit {
       this.state = LayoutState.Contacts;
   }
 
+  public isOpenedMenu = true;
+
   public state: LayoutState;
 
   ngOnInit(): void {

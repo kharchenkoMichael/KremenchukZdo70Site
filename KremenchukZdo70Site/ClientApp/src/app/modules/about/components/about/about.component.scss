@@ -16,11 +16,13 @@
 
   .first-menu-item {
     border-top: 0px;
-    border-radius: 17px 17px 0px 0px;
+    border-top-left-radius: 17px;
+    border-top-right-radius: 17px;
   }
 
   .last-menu-item {
-    border-radius: 0px 0px 17px 17px;
+    border-bottom-left-radius: 17px;
+    border-bottom-right-radius: 17px;
   }
 
   .active {
@@ -28,6 +30,19 @@
     a {
       color: white;
     }
+  }
+
+  .nav-btn {
+    font-family: "Suplexmentary_Comic_NC";
+    font-size: large;
+    background-color: rgb(97, 1, 138);
+    a {
+      color: white;
+    }
+  }
+
+  .nav-btn:hover {
+    background-color: rgb(38, 0, 54);
   }
 
   .menu-item:hover {

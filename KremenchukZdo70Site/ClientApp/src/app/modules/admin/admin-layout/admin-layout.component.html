@@ -6,15 +6,15 @@
   <header>
     <div class="container">
       <div class="row">
-        <div class="col-2 home">
+        <div class="col-12 col-md-2 home">
           <a [routerLink]="['/home']" class="home-text">На головну</a>
         </div>
-        <div class="col-8 name">
+        <div class="col-12 col-md-8 name">
           <a [routerLink]="['/admin']" class="name-text"
             >Заклад дошкільної освіти №70 Адміністративна панель</a
           >
         </div>
-        <div class="col-2 logout">
+        <div class="col-12 col-md-2 logout">
           <a (click)="Logout()" class="logout-text">Вийти</a>
         </div>
       </div>
@@ -23,10 +23,20 @@
   <main>
     <div class="container content">
       <div class="row">
-        <div class="col-4">
+        <div class="col-12 col-md-4">
           <ul class="nav flex-column menu">
             <li
-              class="nav-item menu-item first-menu-item"
+              class="nav-item first-menu-item nav-btn"
+              [class.last-menu-item]="!isOpenedMenu"
+            >
+              <a class="nav-link" (click)="isOpenedMenu = !isOpenedMenu">
+                <span *ngIf="isOpenedMenu">Сховати меню</span>
+                <span *ngIf="!isOpenedMenu">Розкрити меню</span>
+              </a>
+            </li>
+            <li
+              *ngIf="isOpenedMenu"
+              class="nav-item menu-item"
               [class.active]="state === adminState.Collective"
             >
               <a
@@ -37,6 +47,7 @@
               >
             </li>
             <li
+              *ngIf="isOpenedMenu"
               class="nav-item menu-item"
               [class.active]="state === adminState.Contacts"
             >
@@ -48,6 +59,7 @@
               >
             </li>
             <li
+              *ngIf="isOpenedMenu"
               class="nav-item menu-item"
               [class.active]="state === adminState.InformationOpenness"
             >
@@ -59,6 +71,7 @@
               >
             </li>
             <li
+              *ngIf="isOpenedMenu"
               class="nav-item menu-item"
               [class.active]="state === adminState.RegulatoryFramework"
             >
@@ -70,6 +83,7 @@
               >
             </li>
             <li
+              *ngIf="isOpenedMenu"
               class="nav-item menu-item last-menu-item"
               [class.active]="state === adminState.JobTitle"
             >
@@ -82,7 +96,7 @@
             </li>
           </ul>
         </div>
-        <div class="col-8">
+        <div class="col-12 col-md-8">
           <router-outlet></router-outlet>
         </div>
       </div>

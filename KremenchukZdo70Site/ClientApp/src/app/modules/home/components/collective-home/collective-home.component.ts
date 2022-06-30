@@ -1,4 +1,5 @@
 import { Component, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { EmployeeService } from '@base/services/web-api/employee/employee.service';
 import { CollectiveItemResponse } from '@shared/models/collective-item-response';
 import { CollectiveRequest } from '@shared/models/collective-request';
@@ -14,7 +15,10 @@ export class CollectiveHomeComponent implements OnInit {
   public allPages: number[] = [];
   private size: number = 4;
 
-  constructor(private readonly employeeService: EmployeeService) {}
+  constructor(
+    private readonly employeeService: EmployeeService,
+    private readonly router: Router
+  ) {}
 
   ngOnInit(): void {
     this.GoPage(0);
@@ -42,5 +46,9 @@ export class CollectiveHomeComponent implements OnInit {
     if (this.currentPage >= this.allPages.length - 1) return;
 
     this.GoPage(this.currentPage + 1);
+  }
+
+  public openCollective() {
+    this.router.navigate(['about', 'collective']);
   }
 }

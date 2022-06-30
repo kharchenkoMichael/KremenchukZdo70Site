@@ -62,10 +62,17 @@
 
         text-decoration: none;
       }
+
+      .btn-menu {
+        height: 80px;
+        background-color: aqua;
+        padding: 5x 10px;
+        border-radius: 10px;
+        width: 100px;
+      }
     }
 
     .menu {
-      height: 105px;
       vertical-align: middle;
 
       .menu-item {
