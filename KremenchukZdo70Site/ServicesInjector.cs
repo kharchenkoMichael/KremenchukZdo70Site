@@ -19,6 +19,8 @@ namespace KremenchukZdo70Site
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IContentService, ContentService>();
+            services.AddScoped<IJobTitleService, JobTitleService>();
+            services.AddScoped<IEmployeeToJobTitleService, EmployeeToJobTitleService>();
         }
 
         public static void ConfigureDbContext(this IServiceCollection services, IConfiguration config)

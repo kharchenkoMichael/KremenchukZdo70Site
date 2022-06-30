@@ -42,7 +42,7 @@ export class ContactsAdminComponent implements OnInit {
       .subscribe((result) => (contact.id = result));
   }
 
-  onNameFocusOutEvent(event: any, contact: ContactsDataResponse) {
+  onNameChangeEvent(event: any, contact: ContactsDataResponse) {
     contact.name = event.target.value;
 
     var request = new ContactsDataRequest();
@@ -55,7 +55,7 @@ export class ContactsAdminComponent implements OnInit {
       .subscribe((result) => (contact = result));
   }
 
-  onValueFocusOutEvent(event: any, contact: ContactsDataResponse) {
+  onValueChangeEvent(event: any, contact: ContactsDataResponse) {
     contact.value = event.target.value;
 
     var request = new ContactsDataRequest();

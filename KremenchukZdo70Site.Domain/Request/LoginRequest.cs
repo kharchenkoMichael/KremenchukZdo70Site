@@ -1,4 +1,4 @@
-﻿namespace KremenchukZdo70Site.Domain.Response
+﻿namespace KremenchukZdo70Site.Domain.Request
 {
     public class LoginRequest
     {

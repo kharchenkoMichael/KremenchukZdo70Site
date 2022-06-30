@@ -1,0 +1,106 @@
+<div class="content">
+  <button class="btn-collective" (click)="toCollective()">
+    До усіх працівників
+  </button>
+  <hr />
+  <div class="row">
+    <div class="col-6">
+      <div class="content-container" *ngFor="let item of contents">
+        <button class="btn-remove" (click)="removeContent(item)">
+          Видалити строку
+        </button>
+        <textarea
+          class="text-content"
+          (change)="onNameChangeEvent($event, item)"
+          >{{ item.value }}</textarea
+        >
+      </div>
+      <button class="btn-save" (click)="addContent()">Додати строку</button>
+    </div>
+    <div class="col-6">
+      <div class="buttons">
+        <button class="btn-save" (click)="add()">
+          Додати нового співробітника
+        </button>
+        <button class="btn-remove" (click)="remove()">Видалити</button>
+      </div>
+      <hr />
+      <div>
+        <label class="col-4">Велике фото</label>
+        <img class="img-card" src="{{ employee.fullProfileUrl }}" />
+        <textarea
+          class="text-content"
+          [(ngModel)]="employee.fullProfileUrl"
+          (change)="onChangeEvent()"
+        ></textarea>
+      </div>
+      <div>
+        <label class="col-4">Маленьке фото</label>
+        <img class="img-card" src="{{ employee.smallProfileUrl }}" />
+        <textarea
+          class="text-content"
+          [(ngModel)]="employee.smallProfileUrl"
+          (change)="onChangeEvent()"
+        ></textarea>
+      </div>
+      <div>
+        <div class="row">
+          <label class="col-4">Прізвище</label>
+          <input
+            class="col-8"
+            [(ngModel)]="employee.lastName"
+            (change)="onChangeEvent()"
+          />
+        </div>
+        <div class="row">
+          <label class="col-4">Ім'я</label>
+          <input
+            class="col-8"
+            [(ngModel)]="employee.firstName"
+            (change)="onChangeEvent()"
+          />
+        </div>
+        <div class="row">
+          <label class="col-4">По батькові</label>
+          <input
+            class="col-8"
+            [(ngModel)]="employee.secondName"
+            (change)="onChangeEvent()"
+          />
+        </div>
+        <hr />
+        <div>
+          <label class="job-title-label" (click)="goToJobTitles()"
+            >Посади</label
+          >
+          <div
+            class="row job-titles"
+            *ngFor="let employeeToJobTitle of employeeToJobTitles"
+          >
+            <select
+              class="col-6"
+              (change)="onJobTitleChangeEvent($event, employeeToJobTitle)"
+            >
+              <option
+                *ngFor="let item of jobTitles"
+                [selected]="item.id === employeeToJobTitle.jobTitleId"
+                [value]="item.id"
+              >
+                {{ item.name }}
+              </option>
+            </select>
+            <button
+              class="btn-remove col-6"
+              (click)="removeJobTitle(employeeToJobTitle)"
+            >
+              Видалити посаду
+            </button>
+          </div>
+          <button class="btn-save" (click)="addJobTitle()">
+            Додати посаду
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

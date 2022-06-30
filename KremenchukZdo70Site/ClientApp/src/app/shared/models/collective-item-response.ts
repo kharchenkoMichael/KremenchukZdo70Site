@@ -1,3 +1,5 @@
+import { JobTitleItemResponse } from './job-title-item-response';
+
 export class CollectiveItemResponse {
   id: number = 0;
   firstName: string | undefined;
@@ -5,5 +7,5 @@ export class CollectiveItemResponse {
   lastName: string | undefined;
   smallProfileUrl: string | undefined;
   fullProfileUrl: string | undefined;
-  jobTitleNames: string[] | undefined;
+  jobTitles: JobTitleItemResponse[] | undefined;
 }

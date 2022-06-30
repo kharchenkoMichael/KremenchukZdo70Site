@@ -3,7 +3,10 @@
   <hr />
   <div class="row">
     <div *ngFor="let employee of collective" class="col-3">
-      <app-collective-item [employee]="employee"></app-collective-item>
+      <app-collective-item
+        [employee]="employee"
+        [isAdmin]="false"
+      ></app-collective-item>
     </div>
   </div>
 </div>

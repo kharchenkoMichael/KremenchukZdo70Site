@@ -47,7 +47,7 @@ export class RegulatoryFrameworkAdminComponent implements OnInit {
       .subscribe((result) => (regulatoryFramework.id = result));
   }
 
-  onNameFocusOutEvent(
+  onNameChangeEvent(
     event: any,
     regulatoryFramework: RegulatoryFrameworkResponse
   ) {
@@ -63,7 +63,7 @@ export class RegulatoryFrameworkAdminComponent implements OnInit {
       .subscribe((result) => (regulatoryFramework = result));
   }
 
-  onHrefFocusOutEvent(
+  onHrefChangeEvent(
     event: any,
     regulatoryFramework: RegulatoryFrameworkResponse
   ) {

@@ -6,6 +6,6 @@
 
         public int Count { get; set; }
 
-        public IEnumerable<CollectiveItemResponse> Data { get; set; } = Enumerable.Empty<CollectiveItemResponse>();
+        public IEnumerable<EmployeeResponse> Data { get; set; } = Enumerable.Empty<EmployeeResponse>();
     }
 }

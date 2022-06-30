@@ -2,4 +2,15 @@
   margin: 20px 0px;
   font-family: "Suplexmentary_Comic_NC";
   color: rgb(111, 2, 158);
+
+  .btn-save {
+    color: white;
+    background-color: green;
+    border-color: rgb(76, 207, 76);
+    border-radius: 10px;
+  }
+
+  .btn-save:hover {
+    background-color: rgb(76, 207, 76);
+  }
 }

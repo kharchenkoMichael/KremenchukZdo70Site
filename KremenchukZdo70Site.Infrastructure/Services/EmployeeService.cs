@@ -15,6 +15,42 @@ namespace KremenchukZdo70Site.Infrastructure.Services
             _context = context;
         }
 
+        public async Task<int> CtreateEmployeeAsync(EmployeeRequest request)
+        {
+            var employee = new Employee
+            {
+                FirstName = request.FirstName,
+                SecondName = request.SecondName,
+                LastName = request.LastName,
+                FullImageUrl = request.FullProfileUrl,
+                SmallImageUrl = request.SmallProfileUrl,
+            };
+
+            await _context.Employee.AddAsync(employee);
+            await _context.SaveChangesAsync();
+
+            return employee.Id;
+        }
+
+        public async Task DeleteEmployeeAsync(int id)
+        {
+            var employee = await _context.Employee.FirstOrDefaultAsync(item => item.Id == id);
+
+            if (employee == null)
+            {
+                throw new ArgumentException();
+            }
+
+            var contents = _context.Content.Where(item => item.EmployeeId == id);
+            _context.Content.RemoveRange(contents);
+
+            var empToJobs = _context.EmployeeToJobTitle.Where(item => item.EmployeeId == id);
+            _context.EmployeeToJobTitle.RemoveRange(empToJobs);
+
+            _context.Employee.Remove(employee);
+            await _context.SaveChangesAsync();
+        }
+
         public async Task<CollectiveResponse> GetColectiveAsync(CollectiveRequest request)
         {
             if (request is null)
@@ -32,10 +68,10 @@ namespace KremenchukZdo70Site.Infrastructure.Services
             };
         }
 
-        public async Task<CollectiveItemResponse> GetEmplyeeAsync(int id)
+        public async Task<EmployeeResponse> GetEmplyeeAsync(int id)
         {
             var employee = await _context.Employee
-                .Select(item => new CollectiveItemResponse
+                .Select(item => new EmployeeResponse
                 {
                     Id = item.Id,
                     FirstName = item.FirstName,
@@ -43,7 +79,10 @@ namespace KremenchukZdo70Site.Infrastructure.Services
                     LastName = item.LastName,
                     SmallProfileUrl = item.SmallImageUrl,
                     FullProfileUrl = item.FullImageUrl,
-                    JobTitleNames = item.EmployeeToJobTitles.Select(etj => etj.JobTitle.Name)
+                    JobTitles = item.EmployeeToJobTitles.Select(etj => new JobTitleItemResponse{
+                        Id = etj.JobTitleId,
+                        Name = etj.JobTitle.Name }
+                    )
                 })
                 .FirstOrDefaultAsync(item => item.Id == id);
 
@@ -55,12 +94,41 @@ namespace KremenchukZdo70Site.Infrastructure.Services
             return employee;
         }
 
-        private async Task<(int? TotalCount, IList<CollectiveItemResponse> Data)> SelectCollectiveAsync(CollectiveRequest request)
+        public async Task<EmployeeResponse> UpdateEmployeeAsync(EmployeeRequest request)
+        {
+            var employee = await _context.Employee.FirstOrDefaultAsync(item => item.Id == request.Id);
+
+            if (employee == null)
+            {
+                throw new ArgumentException();
+            }
+
+            employee.FirstName = request.FirstName;
+            employee.SecondName = request.SecondName;
+            employee.LastName = request.LastName;
+            employee.FullImageUrl = request.FullProfileUrl;
+            employee.SmallImageUrl = request.SmallProfileUrl;
+
+            _context.Employee.Update(employee);
+            await _context.SaveChangesAsync();
+
+            return new EmployeeResponse
+            {
+                Id = employee.Id,
+                FirstName = employee.FirstName,
+                SecondName = employee.SecondName,
+                LastName = employee.LastName,
+                FullProfileUrl = employee.FullImageUrl,
+                SmallProfileUrl = employee.SmallImageUrl,
+            };
+        }
+
+        private async Task<(int? TotalCount, IList<EmployeeResponse> Data)> SelectCollectiveAsync(CollectiveRequest request)
         {
             var resultQuery = _context
                 .Employee
                 .AsNoTracking()
-                .Select(item => new CollectiveItemResponse
+                .Select(item => new EmployeeResponse
                 {
                     Id = item.Id,
                     FirstName = item.FirstName,
@@ -68,7 +136,11 @@ namespace KremenchukZdo70Site.Infrastructure.Services
                     LastName = item.LastName,
                     SmallProfileUrl = item.SmallImageUrl,
                     FullProfileUrl = item.FullImageUrl,
-                    JobTitleNames = item.EmployeeToJobTitles.Select(etj => etj.JobTitle.Name)
+                    JobTitles = item.EmployeeToJobTitles.Select(etj => new JobTitleItemResponse
+                    {
+                        Id = etj.JobTitleId,
+                        Name = etj.JobTitle.Name
+                    })
                 });
 
             int? totalCount = null;

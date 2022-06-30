@@ -1,9 +1,14 @@
 <div class="content">
   <h3>Наш колектив</h3>
+  <button class="btn-save" (click)="add()">Додати нового співробітника</button>
   <hr />
   <div class="row">
     <div *ngFor="let employee of collective" class="col-3">
-      <app-collective-item [employee]="employee"></app-collective-item>
+      <app-collective-item
+        [employee]="employee"
+        [isAdmin]="true"
+        (onReload)="reload()"
+      ></app-collective-item>
     </div>
   </div>
 </div>

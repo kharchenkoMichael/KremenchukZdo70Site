@@ -4,4 +4,5 @@ export enum AdminState {
   Contacts = 2,
   InformationOpenness = 3,
   RegulatoryFramework = 4,
+  JobTitle = 5,
 }

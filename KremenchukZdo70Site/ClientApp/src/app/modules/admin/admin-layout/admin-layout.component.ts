@@ -13,25 +13,25 @@ export class AdminLayoutComponent implements OnInit {
   public get adminState(): typeof AdminState {
     return AdminState;
   }
-  constructor(private router: Router, private authService: AuthService) {
-    this.state = AdminState.None;
-
-    if (this.router.url.startsWith('/admin/collective'))
-      this.state = AdminState.Collective;
-    if (this.router.url.startsWith('/admin/contacts'))
-      this.state = AdminState.Contacts;
-    if (this.router.url.startsWith('/admin/information-openness'))
-      this.state = AdminState.InformationOpenness;
-    if (this.router.url.startsWith('/admin/regulatory-framework'))
-      this.state = AdminState.RegulatoryFramework;
-  }
-
   public state: AdminState;
 
+  constructor(private router: Router, private authService: AuthService) {
+    this.state = AdminState.None;
+    router.events.subscribe(() => this.reload());
+    this.reload();
+  }
+
   ngOnInit(): void {
+    this.reload();
+  }
+
+  public reload() {
     this.state = AdminState.None;
 
-    if (this.router.url.startsWith('/admin/collective'))
+    if (
+      this.router.url.startsWith('/admin/collective') ||
+      this.router.url.startsWith('/admin/employee')
+    )
       this.state = AdminState.Collective;
     if (this.router.url.startsWith('/admin/contacts'))
       this.state = AdminState.Contacts;
@@ -39,6 +39,8 @@ export class AdminLayoutComponent implements OnInit {
       this.state = AdminState.InformationOpenness;
     if (this.router.url.startsWith('/admin/regulatory-framework'))
       this.state = AdminState.RegulatoryFramework;
+    if (this.router.url.startsWith('/admin/job-title'))
+      this.state = AdminState.JobTitle;
   }
 
   ChangeState(state: AdminState): void {

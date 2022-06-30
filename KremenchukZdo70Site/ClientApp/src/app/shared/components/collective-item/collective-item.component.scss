@@ -12,6 +12,16 @@
     text-align: center;
     color: rgb(38, 7, 139);
     text-shadow: rgb(248, 195, 3) 1px 0 10px;
+
+    .btn-remove {
+      color: white;
+      background-color: red;
+      border-color: rgb(207, 58, 58);
+      border-radius: 10px;
+    }
+    .btn-remove:hover {
+      background-color: rgb(207, 58, 58);
+    }
   }
 }
 

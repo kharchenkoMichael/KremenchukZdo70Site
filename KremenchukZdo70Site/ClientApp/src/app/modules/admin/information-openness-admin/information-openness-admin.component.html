@@ -5,12 +5,12 @@
     <input
       type="text"
       class="name"
-      (change)="onNameFocusOutEvent($event, informationOpen)"
+      (change)="onNameChangeEvent($event, informationOpen)"
       [value]="informationOpen.name"
     /><br />
     <input
       type="text"
-      (change)="onHrefFocusOutEvent($event, informationOpen)"
+      (change)="onHrefChangeEvent($event, informationOpen)"
       [value]="informationOpen.href"
     /><br />
     <button class="remove" (click)="remove(informationOpen)">Видалити</button>

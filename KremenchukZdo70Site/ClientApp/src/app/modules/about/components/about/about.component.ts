@@ -14,7 +14,10 @@ export class AboutComponent implements OnInit {
   constructor(private router: Router) {
     this.state = AboutState.None;
 
-    if (this.router.url.startsWith('/about/collective'))
+    if (
+      this.router.url.startsWith('/about/collective') ||
+      this.router.url.startsWith('/about/employee')
+    )
       this.state = AboutState.Collective;
 
     if (this.router.url.startsWith('/about/information-openness'))

@@ -46,7 +46,7 @@ export class InformationOpennessAdminComponent implements OnInit {
       .subscribe((result) => (informationOpen.id = result));
   }
 
-  onNameFocusOutEvent(event: any, informationOpen: InformationOpenResponse) {
+  onNameChangeEvent(event: any, informationOpen: InformationOpenResponse) {
     informationOpen.name = event.target.value;
 
     var request = new InformationOpenRequest();
@@ -59,7 +59,7 @@ export class InformationOpennessAdminComponent implements OnInit {
       .subscribe((result) => (informationOpen = result));
   }
 
-  onHrefFocusOutEvent(event: any, informationOpen: InformationOpenResponse) {
+  onHrefChangeEvent(event: any, informationOpen: InformationOpenResponse) {
     informationOpen.href = event.target.value;
 
     var request = new InformationOpenRequest();

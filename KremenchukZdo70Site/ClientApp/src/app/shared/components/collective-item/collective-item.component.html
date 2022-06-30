@@ -4,8 +4,11 @@
     <h5 class="card-title">
       {{ employee.lastName }} {{ employee.firstName }} {{ employee.secondName }}
     </h5>
-    <p *ngFor="let jobTitleName of employee.jobTitleNames" class="card-text">
-      {{ jobTitleName }}
+    <p *ngFor="let jobTitle of employee.jobTitles" class="card-text">
+      {{ jobTitle.name }}
     </p>
+    <button *ngIf="isAdmin" class="btn-remove" (click)="remove($event)">
+      Видалити
+    </button>
   </div>
 </div>

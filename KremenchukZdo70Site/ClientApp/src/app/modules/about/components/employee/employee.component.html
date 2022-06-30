@@ -5,7 +5,7 @@
   <hr />
   <div class="row">
     <div class="col-8">
-      <p *ngFor="let item of content">{{ item }}</p>
+      <p *ngFor="let item of contents">{{ item.value }}</p>
     </div>
     <div class="col-4">
       <img class="card-img-top" src="{{ employee.fullProfileUrl }}" />
@@ -14,8 +14,8 @@
           {{ employee.lastName }} {{ employee.firstName }}
           {{ employee.secondName }}
         </h5>
-        <p *ngFor="let jobTitleName of employee.jobTitleNames">
-          {{ jobTitleName }}
+        <p *ngFor="let jobTitle of employee.jobTitles">
+          {{ jobTitle.name }}
         </p>
       </div>
     </div>

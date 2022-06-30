@@ -59,7 +59,7 @@
               >
             </li>
             <li
-              class="nav-item menu-item last-menu-item"
+              class="nav-item menu-item"
               [class.active]="state === adminState.RegulatoryFramework"
             >
               <a
@@ -67,6 +67,17 @@
                 [routerLink]="['/admin/regulatory-framework']"
                 (click)="ChangeState(adminState.RegulatoryFramework)"
                 >Нормативно-правова база</a
+              >
+            </li>
+            <li
+              class="nav-item menu-item last-menu-item"
+              [class.active]="state === adminState.JobTitle"
+            >
+              <a
+                class="nav-link"
+                [routerLink]="['/admin/job-title']"
+                (click)="ChangeState(adminState.JobTitle)"
+                >Посади</a
               >
             </li>
           </ul>

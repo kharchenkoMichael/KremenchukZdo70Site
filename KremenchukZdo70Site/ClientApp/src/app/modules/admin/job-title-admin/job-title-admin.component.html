@@ -1,0 +1,18 @@
+<div>
+  <h3>Посади</h3>
+  <hr />
+  <div *ngFor="let jobTitle of jobTitles" class="row value">
+    <div class="col-8">
+      <input
+        type="text"
+        class="name"
+        (change)="onNameChangeEvent($event, jobTitle)"
+        [value]="jobTitle.name"
+      />
+    </div>
+    <button class="remove col-4" (click)="remove(jobTitle)">Видалити</button>
+    <br />
+  </div>
+  <br />
+  <button class="add" (click)="add()">Додати</button>
+</div>
