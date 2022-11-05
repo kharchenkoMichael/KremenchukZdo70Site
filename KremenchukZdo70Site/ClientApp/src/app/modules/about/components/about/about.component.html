@@ -84,6 +84,14 @@
           Особливі освітні потреби
         </a>
       </li>
+      <li
+        *ngFor="let menuItem of menu"
+        class="nav-item menu-item last-menu-item"
+      >
+        <a class="nav-link">
+          {{ menuItem.name }}
+        </a>
+      </li>
     </ul>
   </div>
   <div class="col-12 col-md-8">

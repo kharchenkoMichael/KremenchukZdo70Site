@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MenuService } from '@base/services/web-api/menu/menu.service';
+import { MenuResponse } from '@shared/models/menu-response';
 import { AboutState } from 'src/app/shared/models/about-state';
 
 @Component({
@@ -8,10 +10,11 @@ import { AboutState } from 'src/app/shared/models/about-state';
   styleUrls: ['./about.component.scss'],
 })
 export class AboutComponent implements OnInit {
+  public menu: MenuResponse[] = [];
   public get aboutState(): typeof AboutState {
     return AboutState;
   }
-  constructor(private router: Router) {
+  constructor(private router: Router, private menuService: MenuService) {
     this.state = AboutState.None;
     this.reload();
     this.router.events.subscribe(() => this.reload());
@@ -22,6 +25,10 @@ export class AboutComponent implements OnInit {
 
   ngOnInit(): void {
     this.reload();
+
+    this.menuService
+      .getParentMenuAsync()
+      .subscribe((result) => (this.menu = result));
   }
 
   private reload() {

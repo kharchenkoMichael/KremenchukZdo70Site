@@ -16,6 +16,8 @@ namespace KremenchukZdo70Site
             services.AddScoped<IContactsDataService, ContactsDataService>();
             services.AddScoped<IInformationOpenService, InformationOpenService>();
             services.AddScoped<IRegulatoryFrameworkService, RegulatoryFrameworkService>();
+            services.AddScoped<IMenuService, MenuService>();
+            services.AddScoped<IPageElementService, PageElementService>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<ITokenService, TokenService>();
             services.AddScoped<IContentService, ContentService>();
