@@ -1,0 +1,31 @@
+<div class="content">
+  <h3>{{ name }}</h3>
+  <hr />
+  <div *ngFor="let elementPageResponse of elementPageResponses">
+    <label>Текст</label>
+    <input
+      type="text"
+      class="name"
+      (change)="onNameChangeEvent($event, elementPageResponse)"
+      [value]="elementPageResponse.text"
+    /><br />
+    <label>Посилання</label>
+    <input
+      type="text"
+      (change)="onHrefChangeEvent($event, elementPageResponse)"
+      [value]="elementPageResponse.href"
+    /><br />
+    <label>Посилання на картинку</label>
+    <input
+      type="text"
+      (change)="onImgChangeEvent($event, elementPageResponse)"
+      [value]="elementPageResponse.imgUrl"
+    /><br />
+    <button class="remove" (click)="remove(elementPageResponse)">
+      Видалити
+    </button>
+    <br />
+  </div>
+  <br />
+  <button class="add" (click)="add()">Додати</button>
+</div>

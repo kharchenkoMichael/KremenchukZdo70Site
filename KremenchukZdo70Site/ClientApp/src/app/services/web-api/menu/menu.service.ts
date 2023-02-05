@@ -18,6 +18,12 @@ export class MenuService {
     return this.http.get<MenuResponse[]>(`${this.baseUrl}api/Menu`);
   }
 
+  public getMenuItemAsync(id: number): Observable<MenuResponse> {
+    return this.http.get<MenuResponse>(
+      `${this.baseUrl}api/Menu/menu-item/${id}`
+    );
+  }
+
   public getParentMenuAsync(): Observable<MenuResponse[]> {
     return this.http.get<MenuResponse[]>(`${this.baseUrl}api/Menu/parent`);
   }

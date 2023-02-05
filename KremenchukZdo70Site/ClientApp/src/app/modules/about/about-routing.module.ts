@@ -9,6 +9,7 @@ import { FoodComponent } from './components/food/food.component';
 import { InformationOpennessComponent } from './components/information-openness/information-openness.component';
 import { RegulatoryFrameworkComponent } from './components/regulatory-framework/regulatory-framework.component';
 import { SpecialEducationalNeedsComponent } from './components/special-educational-needs/special-educational-needs.component';
+import { MenuItemComponent } from './components/menu-item/menu-item.component';
 
 const routes: Routes = [
   {
@@ -47,6 +48,11 @@ const routes: Routes = [
       {
         path: 'special-educational-needs',
         component: SpecialEducationalNeedsComponent,
+      },
+
+      {
+        path: ':id',
+        component: MenuItemComponent,
       },
     ],
   },

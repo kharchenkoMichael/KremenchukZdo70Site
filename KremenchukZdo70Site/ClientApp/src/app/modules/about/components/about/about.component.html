@@ -23,72 +23,16 @@
         >
       </li>
       <li
-        *ngIf="isOpenedMenu"
+        *ngFor="let menuItem of menu; let i = index"
         class="nav-item menu-item"
-        [class.active]="state === aboutState.InformationOpenness"
+        [class.active]="state === menuItem.id"
+        [class.last-menu-item]="i == menu.length - 1"
       >
         <a
           class="nav-link"
-          [routerLink]="['/about/information-openness']"
-          (click)="ChangeState(aboutState.InformationOpenness)"
-          >Інформаційна відкритість</a
+          [routerLink]="['/about/' + menuItem.id]"
+          (click)="ChangeState(menuItem.id)"
         >
-      </li>
-      <li
-        *ngIf="isOpenedMenu"
-        class="nav-item menu-item"
-        [class.active]="state === aboutState.RegulatoryFramework"
-      >
-        <a
-          class="nav-link"
-          [routerLink]="['/about/regulatory-framework']"
-          (click)="ChangeState(aboutState.RegulatoryFramework)"
-          >Нормативно-правова база</a
-        >
-      </li>
-      <li
-        *ngIf="isOpenedMenu"
-        class="nav-item menu-item"
-        [class.active]="state === aboutState.Food"
-      >
-        <a
-          class="nav-link"
-          [routerLink]="['/about/food']"
-          (click)="ChangeState(aboutState.Food)"
-          >Харчування</a
-        >
-      </li>
-      <li
-        *ngIf="isOpenedMenu"
-        class="nav-item menu-item"
-        [class.active]="state === aboutState.AntiBullying"
-      >
-        <a
-          class="nav-link"
-          [routerLink]="['/about/anti-bullying']"
-          (click)="ChangeState(aboutState.AntiBullying)"
-        >
-          Протидія булінгу та домашньому насильству
-        </a>
-      </li>
-      <li
-        *ngIf="isOpenedMenu"
-        class="nav-item menu-item last-menu-item"
-        [class.active]="state === aboutState.SpecialEducationalNeeds"
-      >
-        <a
-          class="nav-link"
-          [routerLink]="['/about/special-educational-needs']"
-          (click)="ChangeState(aboutState.SpecialEducationalNeeds)"
-        >
-          Особливі освітні потреби
-        </a>
-      </li>
-      <li
-        *ngFor="let menuItem of menu"
-        class="nav-item menu-item last-menu-item"
-      >
-        <a class="nav-link">
           {{ menuItem.name }}
         </a>
       </li>

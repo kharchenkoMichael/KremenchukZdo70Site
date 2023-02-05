@@ -54,6 +54,27 @@ namespace KremenchukZdo70Site.Infrastructure.Services
             .ToListAsync();
         }
 
+        public async Task<MenuResponse> GetMenusItemAsync(int id)
+        {
+            var menuItem = await _context
+            .Menu
+            .Where(item => item.Id == id)
+            .Select(item => new MenuResponse
+            {
+                ParentMenuId = item.ParentMenuId,
+                Id = item.Id,
+                Name = item.Name
+            })
+            .FirstOrDefaultAsync();
+
+            if (menuItem == null)
+            {
+                throw new ArgumentNullException("Not Found Menu Item");
+            }
+
+            return menuItem;
+        }
+
         public async Task<IEnumerable<MenuResponse>> GetParrentMenusAsync()
         {
             return await _context

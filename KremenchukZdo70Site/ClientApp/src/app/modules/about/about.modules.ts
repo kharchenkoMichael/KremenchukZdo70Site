@@ -9,6 +9,7 @@ import { CoreModule } from '@base/services/core.module';
 import { InformationOpennessComponent } from './components/information-openness/information-openness.component';
 import { RegulatoryFrameworkComponent } from './components/regulatory-framework/regulatory-framework.component';
 import { EmployeeComponent } from './components/employee/employee.component';
+import { MenuItemComponent } from './components/menu-item/menu-item.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { EmployeeComponent } from './components/employee/employee.component';
     InformationOpennessComponent,
     RegulatoryFrameworkComponent,
     EmployeeComponent,
+    MenuItemComponent,
   ],
   imports: [CommonModule, AboutRoutingModule, SharedModule, CoreModule],
 })

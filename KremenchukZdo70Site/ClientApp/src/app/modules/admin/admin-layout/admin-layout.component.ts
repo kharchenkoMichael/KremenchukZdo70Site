@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '@base/services/web-api/auth/auth.service';
+import { MenuService } from '@base/services/web-api/menu/menu.service';
 import { AdminState } from '@shared/models/admin-state';
+import { MenuRequest } from '@shared/models/menu-request';
+import { MenuResponse } from '@shared/models/menu-response';
 import { LayoutState } from '../../../shared/models/layout-state';
 
 @Component({
@@ -10,14 +13,20 @@ import { LayoutState } from '../../../shared/models/layout-state';
   styleUrls: ['./admin-layout.component.scss'],
 })
 export class AdminLayoutComponent implements OnInit {
+  public menu: MenuResponse[] = [];
   public get adminState(): typeof AdminState {
     return AdminState;
   }
 
   public isOpenedMenu: boolean = true;
-  public state: AdminState;
+  public state: number;
 
-  constructor(private router: Router, private authService: AuthService) {
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private authService: AuthService,
+    private menuService: MenuService
+  ) {
     this.state = AdminState.None;
     router.events.subscribe(() => this.reload());
     this.reload();
@@ -25,6 +34,9 @@ export class AdminLayoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.reload();
+    this.menuService
+      .getParentMenuAsync()
+      .subscribe((result) => (this.menu = result));
   }
 
   public reload() {
@@ -35,17 +47,20 @@ export class AdminLayoutComponent implements OnInit {
       this.router.url.startsWith('/admin/employee')
     )
       this.state = AdminState.Collective;
-    if (this.router.url.startsWith('/admin/contacts'))
+    else if (this.router.url.startsWith('/admin/contacts'))
       this.state = AdminState.Contacts;
-    if (this.router.url.startsWith('/admin/information-openness'))
-      this.state = AdminState.InformationOpenness;
-    if (this.router.url.startsWith('/admin/regulatory-framework'))
-      this.state = AdminState.RegulatoryFramework;
-    if (this.router.url.startsWith('/admin/job-title'))
+    else if (this.router.url.startsWith('/admin/job-title'))
       this.state = AdminState.JobTitle;
+    else if (this.router.url.startsWith('/admin/menu'))
+      this.state = AdminState.Menu;
+    else if (this.router.url.startsWith('/admin/menu'))
+      this.state = AdminState.Menu;
+    else {
+      this.state = Number(this.router.url.substring(7));
+    }
   }
 
-  ChangeState(state: AdminState): void {
+  ChangeState(state: number): void {
     this.state = state;
   }
 

@@ -1,0 +1,27 @@
+<div class="content">
+  <h3>{{ name }}</h3>
+  <hr />
+  <ul>
+    <div *ngFor="let elementPage of elementPageResponses">
+      <a
+        *ngIf="elementPage.href && elementPage.href != ''"
+        href="{{ elementPage.href }}"
+        target="_blank"
+        >{{ elementPage.text }}</a
+      >
+      <p
+        *ngIf="
+          (!elementPage.href || elementPage.href == '') &&
+          (!elementPage.imgUrl || elementPage.imgUrl == '')
+        "
+      >
+        {{ elementPage.text }}
+      </p>
+
+      <img
+        *ngIf="elementPage.imgUrl && elementPage.imgUrl != ''"
+        src="{{ elementPage.imgUrl }}"
+      />
+    </div>
+  </ul>
+</div>

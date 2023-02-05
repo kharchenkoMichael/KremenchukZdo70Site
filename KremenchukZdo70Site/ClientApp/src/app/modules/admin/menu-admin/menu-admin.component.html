@@ -1,0 +1,16 @@
+<div class="content">
+  <h3>Нормативно-правова база</h3>
+  <hr />
+  <div *ngFor="let menuResponse of menuResponses">
+    <input
+      type="text"
+      class="name"
+      (change)="onNameChangeEvent($event, menuResponse)"
+      [value]="menuResponse.name"
+    /><br />
+    <button class="remove" (click)="remove(menuResponse)">Видалити</button>
+    <br />
+  </div>
+  <br />
+  <button class="add" (click)="add()">Додати</button>
+</div>

@@ -3,8 +3,12 @@
   color: rgb(111, 2, 158);
 
   div {
+    label {
+      width: 15%;
+      font-weight: bold;
+    }
     input {
-      width: 100%;
+      width: 80%;
       margin: 10px 0px;
     }
 

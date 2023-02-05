@@ -61,30 +61,6 @@
             <li
               *ngIf="isOpenedMenu"
               class="nav-item menu-item"
-              [class.active]="state === adminState.InformationOpenness"
-            >
-              <a
-                class="nav-link"
-                [routerLink]="['/admin/information-openness']"
-                (click)="ChangeState(adminState.InformationOpenness)"
-                >Інформаційна відкритість</a
-              >
-            </li>
-            <li
-              *ngIf="isOpenedMenu"
-              class="nav-item menu-item"
-              [class.active]="state === adminState.RegulatoryFramework"
-            >
-              <a
-                class="nav-link"
-                [routerLink]="['/admin/regulatory-framework']"
-                (click)="ChangeState(adminState.RegulatoryFramework)"
-                >Нормативно-правова база</a
-              >
-            </li>
-            <li
-              *ngIf="isOpenedMenu"
-              class="nav-item menu-item last-menu-item"
               [class.active]="state === adminState.JobTitle"
             >
               <a
@@ -93,6 +69,32 @@
                 (click)="ChangeState(adminState.JobTitle)"
                 >Посади</a
               >
+            </li>
+            <li
+              *ngIf="isOpenedMenu"
+              class="nav-item menu-item"
+              [class.active]="state === adminState.Menu"
+            >
+              <a
+                class="nav-link"
+                [routerLink]="['/admin/menu']"
+                (click)="ChangeState(adminState.Menu)"
+                >Елементи меню</a
+              >
+            </li>
+            <li
+              *ngFor="let menuItem of menu; let i = index"
+              class="nav-item menu-item"
+              [class.active]="state === menuItem.id"
+              [ngClass]="i == menu.length - 1 ? 'last-menu-item' : ''"
+            >
+              <a
+                class="nav-link"
+                [routerLink]="['/admin/' + menuItem.id]"
+                (click)="ChangeState(menuItem.id)"
+              >
+                {{ menuItem.name }}
+              </a>
             </li>
           </ul>
         </div>

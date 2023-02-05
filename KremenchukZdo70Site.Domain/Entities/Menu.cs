@@ -12,6 +12,6 @@ namespace KremenchukZdo70Site.Domain.Entities
         [StringLength(int.MaxValue)]
         public string? Name { get; set; } = null!;
 
-        public virtual Menu ParrentMenu { get; set; } = null!;
+        public virtual Menu ParentMenu { get; set; } = null!;
     }
 }

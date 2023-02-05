@@ -23,6 +23,11 @@ namespace KremenchukZdo70Site.Controllers
             => await _menuService.GetMenusAsync();
 
         [AllowAnonymous]
+        [HttpGet("menu-item/{id}")]
+        public async Task<MenuResponse> GetMenusItemAsync(int id)
+            => await _menuService.GetMenusItemAsync(id);
+
+        [AllowAnonymous]
         [HttpGet("parent")]
         public async Task<IEnumerable<MenuResponse>> GetParrentMenusAsync()
             => await _menuService.GetParrentMenusAsync();

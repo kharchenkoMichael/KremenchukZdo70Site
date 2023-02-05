@@ -6,9 +6,9 @@ import { AdminLayoutComponent } from './admin-layout/admin-layout.component';
 import { CollectiveAdminComponent } from './collective-admin/collective-admin.component';
 import { ContactsAdminComponent } from './contacts-admin/contacts-admin.component';
 import { EmployeeAdminComponent } from './employee-admin/employee-admin.component';
-import { InformationOpennessAdminComponent } from './information-openness-admin/information-openness-admin.component';
 import { JobTitleAdminComponent } from './job-title-admin/job-title-admin.component';
-import { RegulatoryFrameworkAdminComponent } from './regulatory-framework-admin/regulatory-framework-admin.component';
+import { MenuAdminComponent } from './menu-admin/menu-admin.component';
+import { MenuItemAdminComponent } from './menu-item-admin/menu-item-admin.component';
 
 const routes: Routes = [
   {
@@ -43,13 +43,13 @@ const routes: Routes = [
         canActivate: [AuthGuard],
       },
       {
-        path: 'information-openness',
-        component: InformationOpennessAdminComponent,
+        path: 'menu',
+        component: MenuAdminComponent,
         canActivate: [AuthGuard],
       },
       {
-        path: 'regulatory-framework',
-        component: RegulatoryFrameworkAdminComponent,
+        path: ':id',
+        component: MenuItemAdminComponent,
         canActivate: [AuthGuard],
       },
     ],

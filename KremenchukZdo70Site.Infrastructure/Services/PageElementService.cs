@@ -47,6 +47,7 @@ namespace KremenchukZdo70Site.Infrastructure.Services
         {
             return await _context
             .ElementPage
+            .Where(item => item.MenuId == menuId)
             .Select(item => new ElementPageResponse
             {
                 Id = item.Id,
