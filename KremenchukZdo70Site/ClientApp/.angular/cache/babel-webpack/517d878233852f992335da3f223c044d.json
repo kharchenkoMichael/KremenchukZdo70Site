@@ -1,0 +1,1 @@
+{"ast":null,"code":"export var AboutState = /*#__PURE__*/(() => {\n  (function (AboutState) {\n    AboutState[AboutState[\"None\"] = 0] = \"None\";\n    AboutState[AboutState[\"Collective\"] = -1] = \"Collective\";\n  })(AboutState || (AboutState = {}));\n\n  return AboutState;\n})();","map":null,"metadata":{},"sourceType":"module"}
