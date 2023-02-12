@@ -82,17 +82,17 @@
         a {
           margin: auto;
           font-family: "Suplexmentary_Comic_NC";
-          color: rgb(13, 3, 104);
+          color: rgb(28, 13, 158);
           text-shadow: rgb(248, 195, 3) 1px 0 10px;
         }
 
         :hover {
-          font-size: 30px;
+          color: rgb(12, 6, 60);
         }
       }
 
       .active {
-        font-size: 30px;
+        color: rgb(12, 6, 60);
       }
     }
   }
