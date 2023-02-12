@@ -10,32 +10,33 @@
           <span *ngIf="!isOpenedMenu">Розкрити меню</span>
         </a>
       </li>
-      <li
-        *ngIf="isOpenedMenu"
-        class="nav-item menu-item"
-        [class.active]="state === aboutState.Collective"
-      >
-        <a
-          class="nav-link"
-          [routerLink]="['/about/collective']"
-          (click)="ChangeState(aboutState.Collective)"
-          >Наш колектив</a
+      <div *ngIf="isOpenedMenu">
+        <li
+          class="nav-item menu-item"
+          [class.active]="state === aboutState.Collective"
         >
-      </li>
-      <li
-        *ngFor="let menuItem of menu; let i = index"
-        class="nav-item menu-item"
-        [class.active]="state === menuItem.id"
-        [class.last-menu-item]="i == menu.length - 1"
-      >
-        <a
-          class="nav-link"
-          [routerLink]="['/about/' + menuItem.id]"
-          (click)="ChangeState(menuItem.id)"
+          <a
+            class="nav-link"
+            [routerLink]="['/about/collective']"
+            (click)="ChangeState(aboutState.Collective)"
+            >Наш колектив</a
+          >
+        </li>
+        <li
+          *ngFor="let menuItem of menu; let i = index"
+          class="nav-item menu-item"
+          [class.active]="state === menuItem.id"
+          [class.last-menu-item]="i == menu.length - 1"
         >
-          {{ menuItem.name }}
-        </a>
-      </li>
+          <a
+            class="nav-link"
+            [routerLink]="['/about/' + menuItem.id]"
+            (click)="ChangeState(menuItem.id)"
+          >
+            {{ menuItem.name }}
+          </a>
+        </li>
+      </div>
     </ul>
   </div>
   <div class="col-12 col-md-8">
